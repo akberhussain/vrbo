@@ -1,0 +1,87 @@
+<% include ./partials/header %>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th style="white-space: nowrap; font-size: 80%;" scope="col">Property</th>
+        <th style="white-space: nowrap; font-size: 80%;" scope="col">Offer Recieving Time</th>        
+        <th style="white-space: nowrap; font-size: 80%;" scope="col">Agent Name</th>
+        <th style="white-space: nowrap; font-size: 80%;" scope="col">Agent Email</th>
+        <th style="white-space: nowrap; font-size: 80%;" scope="col">Agent Contact</th>
+        <th style="white-space: nowrap; font-size: 80%;" scope="col">Offer Price</th>
+        <th style="white-space: nowrap; font-size: 80%;" scope="col">Escalation</th>
+        <th style="white-space: nowrap; font-size: 80%;" scope="col">Appraisal Gap</th>
+        <th style="white-space: nowrap; font-size: 80%;" scope="col">Escrow Amount</th>
+        <th style="white-space: nowrap; font-size: 80%;" scope="col">Title Co</th>
+        <th style="white-space: nowrap; font-size: 80%;" scope="col">Payment Type</th>
+        <th style="white-space: nowrap; font-size: 80%;" scope="col">Home Warranty</th>
+        <th style="white-space: nowrap; font-size: 80%;" scope="col">Home Inspection Deadline</th>
+        <th style="white-space: nowrap; font-size: 80%;" scope="col">Other Provisions</th>
+        <th style="white-space: nowrap; font-size: 80%;" scope="col">Date Of Closing</th>
+        <th style="white-space: nowrap; font-size: 80%;" scope="col">Offer Response Time Deadline</th>
+        <th style="white-space: nowrap; font-size: 80%;">Docs</th>
+        <th style="white-space: nowrap; font-size: 80%;">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% offers.forEach(function(offer){ %>
+      <tr>
+        <td style="white-space: nowrap; font-size: 80%;" scope="row"><%= offer.Property %></td>
+        <td style="white-space: nowrap; font-size: 80%;"><%= offer.offercreateddate %></td>           
+        <td style="white-space: nowrap; font-size: 80%;"><%= offer.agentname %></td>
+        <td style="white-space: nowrap; font-size: 80%;"><%= offer.agentemail %></td>
+        <td style="white-space: nowrap; font-size: 80%;"><%= offer.agentcontact %></td>
+        <td style="white-space: nowrap; font-size: 80%;">$<%= offer.purchaseprice %></td>
+        <% if((offer.escalation1 != null && offer.escalation2 != null && offer.escalation1 !== "" ) ) { %>
+        <td style="white-space: nowrap; font-size: 80%;">$<%= offer.escalation1 %> By $<%= offer.escalation2 %></td> 
+        <% } else { %>
+        <td style="white-space: nowrap; font-size: 80%;"></td>
+        <% } %>
+
+        <% if((offer.appraisalgap != null && offer.appraisalgap !== "" ) ) { %>
+          <td style="white-space: nowrap; font-size: 80%;">$<%= offer.appraisalgap %></td>
+        <% } else { %>
+        <td style="white-space: nowrap; font-size: 80%;"></td>
+        <% } %>        
+        <td style="white-space: nowrap; font-size: 80%;">$<%= offer.escrowamount %></td>
+        <td style="white-space: nowrap; font-size: 80%;"><%= offer.escrowfunds %></td>
+        <td style="white-space: nowrap; font-size: 80%;"><%= offer.payment %></td>
+        <td style="white-space: nowrap; font-size: 80%;"><%= offer.homewarranty %></td>
+        <td style="white-space: nowrap; font-size: 80%;"><%= offer.HomeInspection %></td>
+        <td style="white-space: nowrap; font-size: 80%;"><%= offer.otherprovisions %></td>
+        <td style="white-space: nowrap; font-size: 80%;"><%= offer.closingdate %></td>
+        <td style="white-space: nowrap; font-size: 80%;"><%= offer.expirationtime %></td>     
+        <td style="white-space: nowrap; font-size: 80%;">
+          
+          <a href=<%= offer.contract.split("public").pop() %> type = "pdf" download = "Contract">
+            <i class="bi bi-filetype-pdf">Contract</i>
+          </a>
+          &nbsp;
+          <% if(offer.sellerdisc !== "" && offer.sellerdisc !== null ){ %>            
+            <a href=<%= offer.sellerdisc.split("public").pop() %> type = "pdf" download="Sellerdisc"><i class="bi bi-filetype-pdf">Seller Disc</i></a>
+            &nbsp;
+          <% } %>
+          <% if(offer.leadbasedpaint !== "" && offer.leadbasedpaint !== null ){ %>
+            <a href=<%= offer.leadbasedpaint.split("public").pop() %> type = "pdf" download="LeadBasedPaint"><i class="bi bi-filetype-pdf">LeadBasedPaint</i></a>
+            &nbsp;
+          <% } %>
+          <% if(offer.preapproval !== "" && offer.preapproval !== null ){ %>            
+            <a href=<%= offer.preapproval.split("public").pop() %> type = "pdf" download="PreApproval"><i class="bi bi-filetype-pdf">PreApproval</i></a>
+            &nbsp;
+          <% } %>
+          <% if(offer.otherdocs !== "" && offer.otherdocs !== null ){ %>            
+            <a href=<%= offer.otherdocs.split("public").pop() %> type = "pdf" download="OtherDocs"><i class="bi bi-filetype-pdf">OtherDocs</i></a>
+            &nbsp;
+          <% } %>
+        </td>
+        <td style="white-space: nowrap; font-size: 80%;">
+          <form action = "/delete_offer/<%= offer.offerid %>?_method=delete" method = "post" style="display: inline;">
+            <input type = "submit" class = "btn btn-danger btn-xs" value = "Delete Offer">
+          </form>
+      </td>
+      </tr>
+    <% }); %>
+    </tbody>
+  </table>
+
+<% include ./partials/footer %>

@@ -1,0 +1,36 @@
+<% include ./partials/header %>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Seller Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+        <th scope="col">Password</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% users.forEach(function(user){ %>
+      <tr>
+        <th scope="row"><%= user.name %></th>
+        <td><%= user.username %></td>
+        <td><%= user.address %></td>
+        <td><%= user.originalpassword %></td>
+        <td>
+            <form action = "/reset_password/<%= user.id %>?_method=put" method = "post" style="display: inline;">
+                <input type = "submit" class = "btn btn-success btn-xs" value = "Reset Password">
+            </form>
+            &nbsp;
+            <form action = "/delete_user/<%= user.id %>?_method=delete" method = "post" style="display: inline;">
+              <input type = "submit" class = "btn btn-danger btn-xs" value = "Delete User">
+            </form>
+        </td>
+      </tr>
+    <% }); %>
+    </tbody>
+  </table>
+
+<% include ./partials/footer %>
+
+

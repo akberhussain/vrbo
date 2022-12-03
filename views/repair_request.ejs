@@ -1,0 +1,38 @@
+<% include ./partials/header %>
+<div class ="row text-center">
+	<h4><%= foundProperty.streetno %> <%= foundProperty.streetname %> <%= foundProperty.city %> <%= foundProperty.state %></h4>
+    <h5>Please state your name and email address to send repair request</h5>
+</div>
+
+<div class = "container" style = "margin-top: 35px;">
+
+    <div class= "row">
+         <div style = "width: 45%; margin: 0 auto">
+         	
+        <form action="/sendrepairrequest/<%= foundProperty.id %>" method = "post" encType='multipart/form-data'>
+
+            <div class="form-group">
+                <input type="text" name="agentname" class="form-control" placeholder = "Agent's Name" title="Agent's Name" required>
+            </div>
+
+            <div class="form-group">
+                <input type="email" name="agentemail" class="form-control" placeholder = "Agent's Email" title="Agent's Email" required>
+            </div>
+
+            <h6><strong>Upload Repair Request in Pdf</strong></h6>
+            <!-- <div class="form-group"> -->
+                <input type="file" name="avatar" class="btn btn-light form-control" required>
+            <!-- </div> -->
+            <br>
+            <div class="form-group text-center">
+                <button type ="submit" class="btn btn-primary text-center form-control">Submit Request</button>
+            </div>
+        </form>
+                
+
+            <!-- </div>      -->
+         </div>
+    </div>
+</div>
+
+<% include ./partials/footer %>

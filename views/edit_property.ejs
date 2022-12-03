@@ -1,0 +1,59 @@
+<% include ./partials/header %>
+
+<div class = "container" style = "margin-top: 35px;">
+    <div class= "row">
+         <div style = "width: 45%; margin: 0 auto">
+            <div class = "">
+               <h1 class = "spH1" style = "font-size: 30px; color: #2c3e50;">Edit Property</h1>
+             <form action="/updateproperty/<%= foundProperty.id %>?_method=put" method = "post">
+<!--                  <div class = "form-group">
+                    <input class = "form-control" type="text" name = "propertyname" placeholder = "Property Name" required>                 
+                 </div> -->
+                 <div class = "form-group">
+                    <input class = "form-control" type="text" name = "streetno" placeholder = "Street #" value="<%= foundProperty.streetno %>" required>
+                 </div>
+                
+                 <div class = "form-group">
+                    <input class = "form-control" type="text" name = "streetname" value="<%= foundProperty.streetname %>" placeholder = "Street Name" required>
+                 </div>
+
+                 <div class = "form-group">
+                    <input class = "form-control" type="text" name = "city" value="<%= foundProperty.city %>" placeholder = "City" required> 
+                 </div>
+
+                 <div class = "form-group">
+                    <input class = "form-control" type="text" name = "state" value="<%= foundProperty.state %>" placeholder = "State" required> 
+                 </div>
+
+                 <div class = "form-group">
+                    <input class = "form-control" type="number" name = "zipcode" value="<%= foundProperty.zipcode %>" placeholder = "Zip Code"> 
+                 </div>                                  
+                            
+                 <div class = "form-group">
+                    <input class = "form-control" type="text" name = "sellername" value="<%= foundProperty.sellername %>" placeholder = "Seller Name" required>
+                 </div>
+                 
+                 <div class = "form-group">
+                    <input class = "form-control" type="email" name = "selleremail" value="<%= foundProperty.selleremail %>"  placeholder = "Seller Email" required>                 
+                 </div>
+
+<!--                 <div class = "form-group">
+                    <div id="basedinkentucky">
+                      <select name = "basedinkentucky" class="form-control">
+                        <option name = "basedinkentucky" value = "#">Is the property Based in Kentucky ?</option>
+                        <option value = "Yes">Yes</option>
+                        <option value = "No">No</option>
+                      </select>
+                    </div>
+                </div> -->
+
+                 <div class = "form-group">
+                    <input class = "btn btn-success btn-block" type = "submit" value  = "Edit Property">                 
+                </div>
+             </form>    
+            </div>     
+         </div>
+    </div>
+</div>
+
+<% include ./partials/footer %>
