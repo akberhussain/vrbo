@@ -898,7 +898,7 @@ router.post("/add_listing",checkIfAdmin,upload.fields([{name: 'propertyimage'},{
             // nyd = nyd.substring(0,11);
             // nyd = nyd.replace(',','');
             var offercreateddate = nyd+nyt;            
-            var sql1 = `INSERT INTO Property (propertyname,squaremeters,rent,city,state,zipcode,hostname,hostemail,hosimage,propertyimage,rooms,description,propertyimage2) VALUES ("${propertyname}","${squaremeters}","${rent}","${city}","${state}","${zipcode}","${hostname}","${hostemail}","${hostimage}","${propertyimage}","${rooms}","${description}","${propertyimage2}") `
+            var sql1 = `INSERT INTO property (propertyname,squaremeters,rent,city,state,zipcode,hostname,hostemail,hosimage,propertyimage,rooms,description,propertyimage2) VALUES ("${propertyname}","${squaremeters}","${rent}","${city}","${state}","${zipcode}","${hostname}","${hostemail}","${hostimage}","${propertyimage}","${rooms}","${description}","${propertyimage2}") `
             try {
                 var [result, fields, err] = await db.query(sql1);
                 req.flash("success", 'Property listing has been successfully created. ');
