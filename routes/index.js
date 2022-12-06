@@ -248,8 +248,20 @@ router.get("/add_listing",checkIfAdmin,function(req, res){
     res.render("add_listing");
 });
 
-router.get("/show_listings",checkIfAdmin,function(req, res){
-    res.render("admin_home");
+router.get("/show_listings",checkIfAdmin,async(req, res) => {
+
+    var sql = `SELECT * FROM property`
+    try {
+        const [rows, fields, err] = await db.query(sql);
+
+        res.render("show_listings", {properties: rows});        
+        return;
+    } catch(e) {
+        console.log(e);
+        res.send("Error openning the page");
+        return;
+    }
+
 });
 
 // router.get("/viewsellers",checkIfAdmin,async(req, res) => {
