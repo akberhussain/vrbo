@@ -286,7 +286,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <td><%= property.hostname %></td>
                                             <!-- <td><%= property.hostemail %></td> -->
                                             <td><%= property.rent %> eur/month</td>
-                                            <td><%= (property.totalclicks)/2 %></td>
+                                            <td><%= Math.round((property.totalclicks)/2) %></td>
                                             <td>
                                                 <form action = "/delete/<%= property.id %>?_method=delete" method = "post" style="display: inline;">
                                                     <input type="submit" name="Delete Link" value="Delete Link" class="btn btn-danger">
