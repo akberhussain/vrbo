@@ -833,6 +833,7 @@ router.post("/add_listing",checkIfAdmin,upload.fields([{name: 'propertyimage'},{
             var hostemail = req.body.hostemail
             var rooms = req.body.rooms
             var description = req.body.description
+            var imagecaption = req.body.imagecaption
             var totalclicks = 0
 
             var hostimage 
@@ -934,7 +935,7 @@ router.post("/add_listing",checkIfAdmin,upload.fields([{name: 'propertyimage'},{
             // nyd = nyd.substring(0,11);
             // nyd = nyd.replace(',','');
             var offercreateddate = nyd+nyt;            
-            var sql1 = `INSERT INTO property (propertyname,squaremeters,rent,city,state,zipcode,hostname,hostemail,hosimage,propertyimage,rooms,description,propertyimage2) VALUES ("${propertyname}","${squaremeters}","${rent}","${city}","${state}","${zipcode}","${hostname}","${hostemail}","${hostimage}","${propertyimage}","${rooms}","${description}","${propertyimage2}","${totalclicks}") `
+            var sql1 = `INSERT INTO property (propertyname,squaremeters,rent,city,state,zipcode,hostname,hostemail,hosimage,propertyimage,rooms,description,propertyimage2,imagecaption) VALUES ("${propertyname}","${squaremeters}","${rent}","${city}","${state}","${zipcode}","${hostname}","${hostemail}","${hostimage}","${propertyimage}","${rooms}","${description}","${propertyimage2}","${totalclicks}","${imagecaption}") `
             try {
                 var [result, fields, err] = await db.query(sql1);
                 req.flash("success", 'Property listing has been successfully created. ');

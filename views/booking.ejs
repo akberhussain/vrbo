@@ -119,7 +119,7 @@
                                     <span class="px-2 text-white">/</span>
                                     <a class="text-white" href=""><%= foundProperty.squaremeters %> Square Meters</a>
                                 </div>
-                                <a class="h3 m-0 text-white font-weight-bold" href="#"><%= foundProperty.description %></a>
+                                <a class="h3 m-0 text-white font-weight-bold" href="#"><%= foundProperty.imagecaption %></a>
                             </div>
                         </div>
                         <div class="position-relative overflow-hidden" style="height: 435px;">
@@ -130,7 +130,7 @@
                                     <span class="px-2 text-white">/</span>
                                     <a class="text-white" href=""><%= foundProperty.squaremeters %> Square Meters</a>
                                 </div>
-                                <a class="h3 m-0 text-white font-weight-bold" href=""><%= foundProperty.description %></a>
+                                <a class="h3 m-0 text-white font-weight-bold" href=""><%= foundProperty.imagecaption %></a>
                             </div>
                         </div>
 
@@ -261,7 +261,7 @@
             </div>
             <hr>
             <br>
-            <p>Well taken care of home great for a stay long or short. Ready to cook and serve, sleep and stay. Great view of the city of Elko being by the mountain side on the outskirts of Elko. Central Air. Climate control is amazing. Kick your feet up and relax.</p>
+            <p><%= foundProperty.description %></p>
             <br>
           <img src= <%= foundProperty.hosimage.split("public").pop() %> class="rounded float-left" style="height:30px;width: 30px;" alt="...">
             &nbsp;
@@ -305,9 +305,10 @@
               <div class="row">
                 <div class="col-sm">
                 <ul>
-                <li style="color:black;"><strong>100% refund of amount paid </strong>if you cancel by Jan 10, 2023.</li><br>
-                <li style="color:black;"><strong>50% refund of amount paid </strong>(minus the service fee) if you cancel by Jan 17, 2023.</li><br>
-                <li style="color:black;"><strong>No refund </strong>if you cancel after Jan 17, 2023.</li> <br>
+                    
+                <li style="color:black;"><strong>100% refund of amount paid </strong>if you cancel at least 30 days before check-in.</li><br>
+                <li style="color:black;"><strong>50% refund of amount paid </strong>(minus the service fee) if you cancel at least 14 days before check-in.</li><br>
+                <li style="color:black;"><strong>No refund </strong>if you cancel less than 14 days before check-in.</li> <br>
                 <li style="color:black;">Free cancellation deadlines are in the property's timezone. Learn more about cancellation policies.</li><br>
                 </ul>
                 </div>
