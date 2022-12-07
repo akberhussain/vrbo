@@ -216,13 +216,36 @@ router.get("/", async(req, res) => {
 router.get("/property_booking/30926087590017694:id", async(req, res) => {
         
         var propertyid = req.params.id;
+        var num = 1;
+
+        var sql = `SELECT * FROM property WHERE id = ${propertyid} LIMIT 1`
+        // somehow totalclicks+1 returns totalclicks+2
+        var sql1 = `UPDATE property set totalclicks = (totalclicks + ${num} ) WHERE id = ${propertyid}`
+        try {
+            const [rows, fields, err] = await db.query(sql);
+            const [rows1, fields1, err1] = await db.query(sql1);
+
+            res.render("booking", {foundProperty: rows[0]});
+            // res.send("indexpage");
+            return;
+        } catch(e) {
+            console.log(e);
+            res.send("Error openning the page");
+            return;
+        }
+});
+
+router.post("/confirm_booking/30926087590017694:id", async(req, res) => {
+        
+        var propertyid = req.params.id;
+        var startdate = req.body.startdate;
+        var totalmonths = req.body.totalmonths;
 
         var sql = `SELECT * FROM property WHERE id = ${propertyid} LIMIT 1`
         try {
             const [rows, fields, err] = await db.query(sql);
 
-            res.render("booking", {foundProperty: rows[0]});
-            // res.send("indexpage");
+            res.render("confirm_booking", {foundProperty: rows[0],totalmonths:totalmonths,startdate:startdate});
             return;
         } catch(e) {
             console.log(e);
@@ -810,6 +833,7 @@ router.post("/add_listing",checkIfAdmin,upload.fields([{name: 'propertyimage'},{
             var hostemail = req.body.hostemail
             var rooms = req.body.rooms
             var description = req.body.description
+            var totalclicks = 0
 
             var hostimage 
             // = req.files['hostimage'][0].path;
@@ -910,7 +934,7 @@ router.post("/add_listing",checkIfAdmin,upload.fields([{name: 'propertyimage'},{
             // nyd = nyd.substring(0,11);
             // nyd = nyd.replace(',','');
             var offercreateddate = nyd+nyt;            
-            var sql1 = `INSERT INTO property (propertyname,squaremeters,rent,city,state,zipcode,hostname,hostemail,hosimage,propertyimage,rooms,description,propertyimage2) VALUES ("${propertyname}","${squaremeters}","${rent}","${city}","${state}","${zipcode}","${hostname}","${hostemail}","${hostimage}","${propertyimage}","${rooms}","${description}","${propertyimage2}") `
+            var sql1 = `INSERT INTO property (propertyname,squaremeters,rent,city,state,zipcode,hostname,hostemail,hosimage,propertyimage,rooms,description,propertyimage2) VALUES ("${propertyname}","${squaremeters}","${rent}","${city}","${state}","${zipcode}","${hostname}","${hostemail}","${hostimage}","${propertyimage}","${rooms}","${description}","${propertyimage2}","${totalclicks}") `
             try {
                 var [result, fields, err] = await db.query(sql1);
                 req.flash("success", 'Property listing has been successfully created. ');
@@ -938,17 +962,16 @@ router.post("/add_listing",checkIfAdmin,upload.fields([{name: 'propertyimage'},{
 })
 
 router.delete("/delete/:id", checkIfAdmin ,async(req, res)=>{
-
    var id = req.params.id;
    var sql = `DELETE FROM property WHERE id = ${id}`
     try {
         var[result, fields, err] = await db.query(sql);
         req.flash("success", "Property Successfully Removed.");
-        res.redirect("/admin_home")
+        res.redirect("/show_listings")
         return;
     } catch(e){
         req.flash("error", e);
-        res.redirect("/admin_home");
+        res.redirect("/show_listings");
         return;
     }
 });

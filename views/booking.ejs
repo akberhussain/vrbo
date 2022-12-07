@@ -112,7 +112,7 @@
 
                     <div class="owl-carousel owl-carousel-2 carousel-item-1 position-relative mb-3 mb-lg-0">
                         <div class="position-relative overflow-hidden" style="height: 435px;">
-                            <img class="img-fluid h-100" src= <%= foundProperty.propertyimage.split("public").pop() %> style="object-fit: cover;">
+                    <img class="img-fluid h-100" src= <%= foundProperty.propertyimage.split("public").pop() %> style="object-fit: cover;">
                             <div class="overlay">
                                 <div class="mb-1">
                                     <a class="text-white" href=""><%= foundProperty.state %></a>
@@ -152,24 +152,43 @@
                         <p style="color: black;"> <i class="ti-info"> </i> Please enter number of guests.</p>
 
                     </div>
-                        <form>
+                        <form action = "/confirm_booking/30926087590017694<%= foundProperty.id%>" method=
+                            "post">
                           <div class="form-group">
                             <label for="exampleInputEmail1">Check In</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Please enter the date of starting i.e 1st January 2023">
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Please enter the date of starting i.e 1st January 2023" name="startdate" required>
                             <small id="emailHelp" class="form-text text-muted">Please enter the date of starting i.e 1st January 2023</small>
                           </div>
                           <div class="form-group">
                             <label for="exampleInputPassword1">Total Number Months you need to stay</label>
                             <!-- <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
 
-                                <select id = "exampleInputPassword1" class="form-control">
-                                    <option>Total Number Of Months</option> 
-                                    <option>1 Month</option>
-                                    <option>2 Months</option>
-                                    <option>3 Months</option>
-                                    <option>4 Months</option>
-                                    <option>5 Months</option>
-                                    <option>6 Months</option>
+                                <select id = "exampleInputPassword1" class="form-control" name = "totalmonths" required>
+                                    <!-- <option value="1">Total Number Of Months</option>  -->
+                                    <option value="1">1 Month</option>
+                                    <option value="2">2 Months</option>
+                                    <option value="3">3 Months</option>
+                                    <option value="4">4 Months</option>
+                                    <option value="5">5 Months</option>
+                                    <option value="6">6 Months</option>
+                                    <option value="7">7 Months</option>
+                                    <option value="8">8 Months</option>
+                                    <option value="9">9 Months</option>
+                                    <option value="10">10 Months</option>
+                                    <option value="11">11 Months</option>
+                                    <option value="12">12 Months</option>
+                                    <option value="13">13 Months</option>
+                                    <option value="14">14 Months</option>
+                                    <option value="15">15 Months</option>
+                                    <option value="16">16 Months</option>
+                                    <option value="17">17 Months</option>
+                                    <option value="18">18 Months</option>
+                                    <option value="19">19 Months</option>
+                                    <option value="20">20 Months</option>
+                                    <option value="21">21 Months</option>
+                                    <option value="22">22 Months</option>
+                                    <option value="23">23 Months</option>
+                                    <option value="24">24 Months</option>
                                 </select>
                                 <br>
                                 <p><strong style="">Total:</strong> 
@@ -186,6 +205,10 @@
                           <br>
                           <button type="submit" class="btn btn-primary btn-block" style="background-color: #245abc; border: 1px solid #245abc; border-radius: 12px; margin-left: 10%;">Book now</button>
                         </form>
+                        <br>
+                        <span style="text-align: center; color: black; margin-left: 10%;" ><strong>Property #</strong> 90017694<%= foundProperty.id %></span>
+                        <br>
+                        <a href="#" style="color: #245abc; margin-left: 10%;"><strong>Report this property</strong></a>
                         <br>
                         <hr>
                         <img src= <%= foundProperty.hosimage.split("public").pop() %> class="rounded float-left" style="height:30px;width: 30px;" alt="...">
@@ -228,7 +251,7 @@
             <div class="">
                 <div class="container">
                     <nav class="breadcrumb bg-transparent m-0 p-0">
-                        <h5 class="breadcrumb-item">House</h5>
+                        <h5 class="breadcrumb-item">Apartment</h5>
                         <h5 class="breadcrumb-item"><%= foundProperty.rooms %> Bedrooms </h5>
                         <h5 class="breadcrumb-item"><%= foundProperty.squaremeters %> Square Meters</h5>
 
@@ -245,7 +268,94 @@
             &nbsp;
             <span style="font-size: 20px;">hosted by: <%= foundProperty.hostname %></span>
         </div>
+    </div>
+    <br>
+    <!-- Amenities -->
+    <div class="container-fluid py-3">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
+                <h3 class="m-0">Amenities</h3>
+                <a class="text-secondary font-weight-medium text-decoration-none" href="#" data-toggle="modal" data-target="#exampleModalCenter">View All</a>
+            </div>
+            <div class="">
+                <div class="container">
+                    <a href="#" style="color: #2474de;" data-toggle="modal" data-target="#exampleModalCenter"><strong>View all 32 Amenities</strong></a>
+                </div>
+            </div>
+            <hr>
+            <br>            
         </div>
+    </div>
+    <!-- /Amenities -->
+    <!-- Policy -->
+        <div class="container-fluid py-3">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
+                <h3 class="m-0">Policies</h3>
+                <!-- <br> -->
+                <!-- <h6>Cancellation policy</h6> -->
+                <a class="text-secondary font-weight-medium text-decoration-none" href="#">View All</a>
+            </div>
+            <div class="">
+            <div class="container">
+                <h5 class="m-0">Cancellation policy</h5>
+                <hr>
+                <br>
+            <!-- <div class="container"> -->
+              <div class="row">
+                <div class="col-sm">
+                <ul>
+                <li style="color:black;"><strong>100% refund of amount paid </strong>if you cancel by Jan 10, 2023.</li><br>
+                <li style="color:black;"><strong>50% refund of amount paid </strong>(minus the service fee) if you cancel by Jan 17, 2023.</li><br>
+                <li style="color:black;"><strong>No refund </strong>if you cancel after Jan 17, 2023.</li> <br>
+                <li style="color:black;">Free cancellation deadlines are in the property's timezone. Learn more about cancellation policies.</li><br>
+                </ul>
+                </div>
+                <div class="col-sm">
+                    <ul>
+                  <li style = "color: black;"> 
+                    <svg data-id="SVG_SUITCASE__24" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" d="M2.75 6.438h17a1.5 1.5 0 011.5 1.5v11.498h-17a1.5 1.5 0 01-1.5-1.5V9.999M6.75 19.436V6.438M17.75 19.436V6.438M7.75 6.2l1.881-2.762h4.404L15.916 6.2"></path></svg>
+                    <i> If you have upcoming trips, you can manage or cancel your booking in your traveler account. </i></li> <br>
+                </ul>
+                </div>
+              </div>
+            <!-- </div> -->
+<!--                 <p style="color:black;"><strong>100% refund of amount paid </strong>if you cancel by Jan 10, 2023.</p>
+                <p style="color:black;"><strong>50% refund of amount paid </strong>(minus the service fee) if you cancel by Jan 17, 2023.</p>
+                <p style="color:black;"><strong>No refund </strong>if you cancel after Jan 17, 2023.</p>
+                <p style="color:black;">Free cancellation deadlines are in the property's timezone. Learn more about cancellation policies.</p> -->
+            </div>
+            <br>
+            <div class="container">
+                <h5 class="m-0">Cleaning practices</h5>
+                <hr>
+                <!-- <br> -->
+                <!-- <ul> -->
+                    <li style="color:black;">Cleaned with disinfectant</li>
+                    <li style="color:black;">Check in and check out with no person-to-person contact</li>
+                    <li style="color:black;">All towels and bedding washed in hot water that’s at least 60ºC/140ºF</li>
+                    <li style="color:black;">High-touch surfaces cleaned with disinfectant (like countertops, light switches, handles, and faucets)</li>
+                <!-- </ul> -->
+
+            </div>
+            <br>
+            <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
+                <h3 class="m-0">Reviews</h3>
+                <!-- <br> -->
+                <!-- <h6>Cancellation policy</h6> -->
+                <!-- <a class="text-secondary font-weight-medium text-decoration-none" href="#">View All</a> -->
+            </div>
+            <div class="container">
+                <p style="color:black">This property doesn't have any reviews yet.</p>
+                <hr>
+            </div>
+
+            </div>
+            <br>            
+        </div>
+    </div>
+    <!-- /Policy -->
+
     <!-- Featured News Slider Start -->
    <!--  <div class="container-fluid py-3">
         <div class="container">
@@ -900,7 +1010,125 @@ Terms and Conditions · Privacy Policy · Do Not Sell My Personal Information</p
 
     <!-- Template Javascript -->
     <script src="/js/main.js"></script>
+<script type="text/javascript">
+    $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+</script>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered  modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Amenities</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <!-- <hr> -->
+      </div>
+      <div class="modal-body">
+            <div class="container">
+               <h5>Essentials</h5>                
+              <div class="row">
+                <div class="col-sm">
+                  <li style = "color: black;">Internet</li>
+                  <li style = "color: black;">Linens provided</li>
+                  <!-- <li style = "color: black;">Towels provided</li> -->
+                </div>
+                <div class="col-sm">
+                  <li style = "color: black;">Heating</li>
+                  <li style = "color: black;">Air Conditioning</li>
+                  <!-- <li style = "color: black;">Wireless Internet</li> -->
+                </div>
+                <div class="col-sm">
+                  <li style = "color: black;">Toilet Paper</li>
+                  <li style = "color: black;">Wifi speed 100+ Mbps</li>
+                  <!-- <li style = "color: black;">Free Wifi</li> -->
+                </div>
+              </div>
+            </div>
+            <hr>
+            <!-- <br> -->
+            <!-- 2 -->
+            <div class="container">
+               <h5>Kitchen</h5>                
+              <div class="row">
+                <div class="col-sm">
+                  <li style = "color: black;">Microwave</li>
+                  <!-- <li style = "color: black;">Refrigerator</li> -->
+                  <li style = "color: black;">Dishes & Utensils</li>
+                  <!-- <li style = "color: black;">Coffee Maker</li> -->
+                </div>
 
+                <div class="col-sm">
+                  <li style = "color: black;">Kitchen</li>
+                  <!-- <li style = "color: black;">Dishwasher</li> -->
+                  <li style = "color: black;">Oven</li>
+                  <!-- <li style = "color: black;">Blender</li> -->
+                </div>
+                <div class="col-sm">
+                  <li style = "color: black;">Dishes & utensils for kids</li>
+                  <!-- <li style = "color: black;">Dining table</li> -->
+                  <li style = "color: black;">Kitchen island</li>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <!-- <br> -->
+            <!-- 3 -->
+            <div class="container">
+               <h5>Laundry</h5>                
+              <div class="row">
+                <div class="col-sm">
+                  <li style = "color: black;">Washing Machine</li>
+<!--                   <li style = "color: black;">Linens provided</li>
+                  <li style = "color: black;">Towels provided</li> -->
+                </div>
+                <div class="col-sm">
+                  <li style = "color: black;">Clothes Dryer</li>
+<!--                   <li style = "color: black;">Air Conditioning</li>
+                  <li style = "color: black;">Wireless Internet</li> -->
+                </div>
+                <div class="col-sm">
+                  <li style = "color: black;">Iron & Board</li>
+<!--                   <li style = "color: black;">Wifi speed 100+ Mbps</li>
+                  <li style = "color: black;">Free Wifi</li> -->
+                </div>
+              </div>
+            </div>
+            <hr>
+           
+            <!-- 3 -->
+            <div class="container">
+               <h5>Entertainment</h5>                
+              <div class="row">
+                <div class="col-sm">
+                  <li style = "color: black;">Television</li>
+<!--                   <li style = "color: black;">Linens provided</li>
+                  <li style = "color: black;">Towels provided</li> -->
+                </div>
+                <div class="col-sm">
+                  <li style = "color: black;">Smart TV</li>
+<!--                   <li style = "color: black;">Air Conditioning</li>
+                  <li style = "color: black;">Wireless Internet</li> -->
+                </div>
+                <div class="col-sm">
+<!--                   <li style = "color: black;">Toilet Paper</li>
+                  <li style = "color: black;">Wifi speed 100+ Mbps</li>
+                  <li style = "color: black;">Free Wifi</li> -->
+                </div>
+              </div>
+            </div>
+      <!--       <hr>
+            <br> -->
+
+      </div>
+<!--       <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div> -->
+    </div>
+  </div>
+</div>
 <% } else { %>
     
     <main>
