@@ -890,6 +890,14 @@ router.post("/add_listing",checkIfAdmin,upload.fields([{name: 'propertyimage'},{
             
             var propertyimage 
             var propertyimage2 
+            var propertyimage3 
+            var propertyimage4 
+            var propertyimage5 
+            var propertyimage6 
+            var propertyimage7 
+            var propertyimage8 
+            var propertyimage9 
+            var propertyimage10 
             // = req.files['propertyimage'][0].path;
             // propertyimage = propertyimage.replace(/\\/g, "\\\\")
 
@@ -911,67 +919,55 @@ router.post("/add_listing",checkIfAdmin,upload.fields([{name: 'propertyimage'},{
             } else {
                 propertyimage2 = '';
             }
+            if(req.files['propertyimage3']){
+                 propertyimage3 = req.files['propertyimage3'][0].path;
+                  propertyimage3 = propertyimage3.replace(/\\/g, "\\/")
+            } else {
+                propertyimage3 = '';
+            }
+            if(req.files['propertyimage4']){
+                 propertyimage4 = req.files['propertyimage4'][0].path;
+                  propertyimage4 = propertyimage4.replace(/\\/g, "\\/")
+            } else {
+                propertyimage4 = '';
+            }
+            if(req.files['propertyimage5']){
+                 propertyimage5 = req.files['propertyimage5'][0].path;
+                  propertyimage5 = propertyimage5.replace(/\\/g, "\\/")
+            } else {
+                propertyimage5 = '';
+            }
+            if(req.files['propertyimage6']){
+                 propertyimage6 = req.files['propertyimage6'][0].path;
+                  propertyimage6 = propertyimage6.replace(/\\/g, "\\/")
+            } else {
+                propertyimage6 = '';
+            }
+            if(req.files['propertyimage7']){
+                 propertyimage7 = req.files['propertyimage7'][0].path;
+                  propertyimage7 = propertyimage7.replace(/\\/g, "\\/")
+            } else {
+                propertyimage7 = '';
+            }
+            if(req.files['propertyimage8']){
+                 propertyimage8 = req.files['propertyimage8'][0].path;
+                  propertyimage8 = propertyimage8.replace(/\\/g, "\\/")
+            } else {
+                propertyimage8 = '';
+            }
+            if(req.files['propertyimage9']){
+                 propertyimage9 = req.files['propertyimage9'][0].path;
+                  propertyimage9 = propertyimage9.replace(/\\/g, "\\/")
+            } else {
+                propertyimage9 = '';
+            }
+            if(req.files['propertyimage10']){
+                 propertyimage10 = req.files['propertyimage10'][0].path;
+                  propertyimage10 = propertyimage10.replace(/\\/g, "\\/")
+            } else {
+                propertyimage10 = '';
+            }
 
-            // escalation1 = parseInt(escalation1).toLocaleString();
-            // escalation2 = parseInt(escalation2).toLocaleString();
-            // appraisalgap = parseInt(appraisalgap).toLocaleString();
-            // purchaseprice = purchaseprice.toLocaleString();
-            // escrowamount = escrowamount.toLocaleString();
-
-            // contingency = new Date(contingency)
-            // contingency = contingency.toLocaleString('en-US')
-            // contingency = contingency.split(',')[0];
-
-           //  if(req.files['sellerdisc']){
-           //       sellerdisc = req.files['sellerdisc'][0].path;
-           //       sellerdiscObj = {
-           //          filename : 'sellerdisc.pdf',
-           //          path: sellerdisc,
-           //          contentType: 'application/pdf'
-           //       }
-           //       sellerdisc = sellerdisc.replace(/\\/g, "\\\\")
-           //  } else {
-           //      sellerdisc = '';
-           //      sellerdiscObj = {}
-           //  }
-           //  if(req.files['otherdocs']){
-           //      otherdocs = req.files['otherdocs'][0].path;
-           //      otherdocsObj = {
-           //         filename : 'otherdocs.pdf',
-           //         path: otherdocs,
-           //         contentType: 'application/pdf'
-           //      }
-           //      otherdocs = otherdocs.replace(/\\/g, "\\\\")
-           // } else {
-           //      otherdocs = '';
-           //      otherdocsObj = {}
-           // }
-
-            // if(req.files['leadbasedpaint']){
-            //      leadbasedpaint = req.files['leadbasedpaint'][0].path;
-            //      leadbasedpaintObj = {
-            //         filename : 'leadbasedpaint.pdf',
-            //         path: leadbasedpaint,
-            //         contentType: 'application/pdf'
-            //      }
-            //      leadbasedpaint = leadbasedpaint.replace(/\\/g, "\\\\")
-            // } else {
-            //     leadbasedpaint = '';
-            //     leadbasedpaintObj = {}
-            // }
-
-            // if(req.files['preapprovalletter']){
-            //      preapproval = req.files['preapprovalletter'][0].path;
-            //      preapprovalObj = {
-            //         filename : 'preapproval.pdf',
-            //         path: preapproval,
-            //         contentType: 'application/pdf'
-            //      }
-            //      preapproval = preapproval.replace(/\\/g, "\\\\")
-            // } else {
-            //     preapproval = '';
-            //     preapprovalObj = {}
-            // }
             var localTime1 = new Date()
             var nyd = new Date(localTime1);
              
@@ -983,7 +979,7 @@ router.post("/add_listing",checkIfAdmin,upload.fields([{name: 'propertyimage'},{
             // nyd = nyd.substring(0,11);
             // nyd = nyd.replace(',','');
             var offercreateddate = nyd+nyt;            
-            var sql1 = `INSERT INTO property (propertyname,squaremeters,rent,city,state,zipcode,hostname,hostemail,hosimage,propertyimage,rooms,description,propertyimage2,imagecaption) VALUES ("${propertyname}","${squaremeters}","${rent}","${city}","${state}","${zipcode}","${hostname}","${hostemail}","${hostimage}","${propertyimage}","${rooms}","${description}","${propertyimage2}","${totalclicks}","${imagecaption}") `
+            var sql1 = `INSERT INTO property (propertyname,squaremeters,rent,city,state,zipcode,hostname,hostemail,hosimage,propertyimage,rooms,description,propertyimage2,totalclicks,imagecaption,propertyimage3,propertyimage4,propertyimage5,propertyimage6,propertyimage7,propertyimage8,propertyimage9,propertyimage10) VALUES ("${propertyname}","${squaremeters}","${rent}","${city}","${state}","${zipcode}","${hostname}","${hostemail}","${hostimage}","${propertyimage}","${rooms}","${description}","${propertyimage2}","${totalclicks}","${imagecaption}","${propertyimage3}","${propertyimage4}","${propertyimage5}","${propertyimage6}","${propertyimage7}","${propertyimage8}","${propertyimage9}","${propertyimage10}") `
             try {
                 var [result, fields, err] = await db.query(sql1);
                 req.flash("success", 'Property listing has been successfully created. ');
