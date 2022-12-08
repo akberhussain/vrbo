@@ -254,6 +254,54 @@ router.post("/confirm_booking/30926087590017694:id", async(req, res) => {
         }
 });
 
+router.post("/confirm_policy/30926087590017694:id", async(req, res) => {
+        
+        var propertyid = req.params.id;
+        var startdate = req.body.startdate;
+        var totalmonths = req.body.totalmonths;
+        var firstname = req.body.firstname;
+        var lastname = req.body.lastname;
+        var email = req.body.email;
+        var message = req.body.message;
+        var contactnum = req.body.contactnum;
+
+        var sql = `SELECT * FROM property WHERE id = ${propertyid} LIMIT 1`
+        try {
+            const [rows, fields, err] = await db.query(sql);
+
+            res.render("confirm_policy", {foundProperty: rows[0],totalmonths:totalmonths,startdate:startdate,propertyid:propertyid,firstname:firstname,lastname:lastname,email:email,message:message,contactnum:contactnum});
+            return;
+        } catch(e) {
+            console.log(e);
+            res.send("Error openning the page");
+            return;
+        }
+});
+
+router.post("/confirm_reservation/30926087590017694:id", async(req, res) => {
+        
+        var propertyid = req.params.id;
+        var startdate = req.body.startdate;
+        var totalmonths = req.body.totalmonths;
+        var firstname = req.body.firstname;
+        var lastname = req.body.lastname;
+        var email = req.body.email;
+        var message = req.body.message;
+        var contactnum = req.body.contactnum;
+
+        var sql = `SELECT * FROM property WHERE id = ${propertyid} LIMIT 1`
+        try {
+            const [rows, fields, err] = await db.query(sql);
+
+            res.render("confirm_reservation", {foundProperty: rows[0],totalmonths:totalmonths,startdate:startdate,propertyid:propertyid,firstname:firstname,lastname:lastname,email:email,message:message,contactnum:contactnum});
+            return;
+        } catch(e) {
+            console.log(e);
+            res.send("Error openning the page");
+            return;
+        }
+});
+
 router.get("/property_booking/*", async(req, res) => {
 
     res.render("booking", {foundProperty: null})
