@@ -16,7 +16,8 @@ var passportLocalMongoose = require("passport-local-mongoose");
 var methodOverride = require("method-override");
 var jquery = require("jquery");
 var User = require("./models/user");
-
+const dotenv = require("dotenv");
+dotenv.config();
 
 // var promise = mongoose.connect('mongodb://akberhussain:123abc..@cluster0.qhauv.mongodb.net/mydbforminkoffers?retryWrites=true&w=majority', {
 //   useMongoClient: true,
@@ -200,8 +201,8 @@ app.use(indexRoutes);
 // });
 
 
-app.listen(process.env.PORT || 3000, function(){
-    console.log("Local Server has Started on port 3000 !!");
+app.listen(process.env.PORT || 5001, function(){
+    console.log("Local Server has Started on port 5000!!");
 });
 
 // console.log(ssl.key);
@@ -221,4 +222,4 @@ app.listen(process.env.PORT || 3000, function(){
 // const http = require('http');
 // http.createServer(app).listen(8080)
 // https.createServer(options, app).listen(8443)
-// ====================================================================
+// ==================================================================== 

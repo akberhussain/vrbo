@@ -18,6 +18,7 @@
     "body-parser": "^1.17.2",
     "clusters": "0.0.4",
     "connect-flash": "^0.1.1",
+    "dotenv": "^16.0.3",
     "ejs": "^2.5.7",
     "express": "^4.15.4",
     "express-session": "^1.15.5",
