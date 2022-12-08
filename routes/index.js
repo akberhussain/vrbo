@@ -864,7 +864,7 @@ router.get("/show_listings",checkIfAdmin,async(req, res) => {
 //     }
 // })
 
-router.post("/add_listing",checkIfAdmin,upload.fields([{name: 'propertyimage'},{name: 'propertyimage2'},{name:'hostimage'}]) ,async(req, res)=>{
+router.post("/add_listing",checkIfAdmin,upload.fields([{name: 'propertyimage'},{name: 'propertyimage2'},{name:'hostimage'},{name: 'propertyimage3'},{name: 'propertyimage4'},{name: 'propertyimage5'},{name: 'propertyimage6'},{name: 'propertyimage7'},{name: 'propertyimage8'},{name: 'propertyimage9'},{name: 'propertyimage10'}]) ,async(req, res)=>{
 
     if(req.files) {
         // var id = req.params.id;
