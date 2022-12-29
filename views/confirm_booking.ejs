@@ -49,6 +49,20 @@
     <link href="/css3/style.css" rel="stylesheet">
 </head>
 
+                    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/639307b2b0d6371309d373f7/1gjr5c4r4';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
 <body>
 
 <% if(foundProperty && (foundProperty.propertyname )) { %>
@@ -114,7 +128,9 @@
                 <div class="col-sm" style="background-color: white;">
                 	<p style="color:black; margin-top: 9px; padding-top: 9px;"> 
                      <svg data-id="SVG_PHONE__24" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" d="M20.097 20.535c-9.304 0-16.847-7.543-16.847-16.847M20.496 18.191l.227-1.33a1.939 1.939 0 00-.966-2.017l-2.763-1.54a1.936 1.936 0 00-2.48.511l-.973 1.27-.025-.016a13.162 13.162 0 01-4.815-4.825l1.27-.973c.761-.585.98-1.642.51-2.48l-1.54-2.763a1.935 1.935 0 00-2.017-.966l-3.674.626c0 .79.054 1.565.16 2.325M15.17 8.83l2.479-2.479M16.878 10.538l2.268-.512M13.462 7.122l.512-2.268"></path></svg>
-                    <i> For booking assistance, call <strong>(1) 888-382-8909</strong></i>
+                     &nbsp;
+                    <!-- <i> For booking assistance, call <strong>(1) 888-382-8909</strong></i> -->
+                    <a href="https://tawk.to/chat/639307b2b0d6371309d373f7/1gjr5c4r4" target = "_blank" class="btn btn-primary btn-sm" style="background-color: #245abc; border: 1px solid #245abc; border-radius: 12px;">START CHAT</a>	
                     <br><br>
                     Rental Number: <strong>1978994</strong>
                     <br><br>
@@ -209,6 +225,7 @@
                           <input type="hidden" name="propertyid" value="<%= foundProperty.id %>">
                           <input type="hidden" name="startdate" value="<%= startdate %>">
                           <input type="hidden" name="totalmonths" value="<%= totalmonths %>">
+                          <input type="hidden" name="bankid" value="<%= foundProperty.bankid %>">
 
 								<p><strong style="">Total:</strong> 
                                     &nbsp;

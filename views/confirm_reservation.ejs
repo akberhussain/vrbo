@@ -1,13 +1,559 @@
-<%= totalmonths %> Months
-<br>
-Date Of staying <%= startdate %>
-<br>
-First Name: <%= firstname %>
-<br>
-Last Name: <%= lastname %>
-<br>
-Contact Num: <%= contactnum %>
-<br>
-Message to host: <%= message %>
-<br>
-Property No: <%= propertyid %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Helpme : Get Services on the go in UAE">
+    <meta name="author" content="Helpme">
+    <title>Vrbo | Book your vacation rentals: beach houses, cabins, condos &amp; more</title>
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="/img/favicon_1.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="/img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="/img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="/img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="/img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- GOOGLE WEB FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+    <!-- BASE CSS -->
+    <link href="/css2/bootstrap.min.css" rel="stylesheet">
+    <link href="/css2/style.css" rel="stylesheet">
+    <link href="/css2/vendors.css" rel="stylesheet">
+
+    <!-- ALTERNATIVE COLORS CSS -->
+    <link href="#" id="colors" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link href="/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">   
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/css3/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<% if(foundProperty && (foundProperty.propertyname )) { %>
+
+<div id="page">
+        
+    <header class="header menu_fixed" style="background-color: #f9f8f7; padding-bottom: 10px;">
+        <div id="logo">
+            <a href="#" title="Sparker - Directory and listings template">
+                <img src="/img/logo-v2.svg"  alt="" class="logo_normal">
+                <img src="/img/logo-v2.svg"  alt="" class="logo_sticky">
+            </a>
+        </div>
+        <ul id="top_menu">
+            <li><a href="/admin_login" class="btn_add" style="background-color: #15326f; text-decoration: none;" target="">List Your Property</a></li>
+            <li><a href="#sign-in-dialog" id="sign-in" class="login" title="Sign In" style="color: #15326f">Sign In</a></li>
+            <!-- <li><a href="#" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li> -->
+        </ul>
+        <!-- /top_menu -->
+        <a href="#menu" class="btn_mobile">
+            <div class="hamburger hamburger--spin" id="hamburger">
+                <div class="hamburger-box">
+                    <div class="hamburger-inner"></div>
+                </div>
+            </div>
+        </a>
+        <nav id="menu" class="main-menu">
+            <ul>
+            </ul>
+        </nav>
+    </header>
+    <!-- /header -->
+</div>
+
+        <div class="container-fluid py-3" style="margin-top:80px; padding-top: 80px;">
+        <div class="container">
+            
+            <div class="">
+            <div class="container">
+                <h3 class="m-0">You're finally there !</h3>
+                <hr>
+                <br>
+            <!-- <div class="container"> -->
+              <div class="row">
+                <div class="col-md-8" style="background-color: white;">
+                <div class="container">            	
+	                <h5 style="color:black; margin-top: 9px; padding-top: 9px;">Bank Details
+	                	<br>	
+	                	<!-- <span style="font-size: 13px;">You’re covered when you book and pay on Vrbo.</span> -->
+	                </h5>
+	                <br>
+	            <p style="color: black;">
+                    Please deposit 1st month rent plus 2 months rent as security deposit in the following bank
+	            </p>
+	            <p style="color: black;">
+                    <li style="color: black;"> <strong>NAME: </strong><%= bank.name %></li>
+                    <li style="color: black;"><strong>IBAN: </strong><%= bank.iban %></li>
+                    <li style="color: black;"><strong>SWIFT: </strong><%= bank.swift %></li>
+                    <li style="color: black;"><strong>BANK: </strong><%= bank.bank %></li>                    
+	            </p>
+
+                </div>
+                </div>	
+				&nbsp; &nbsp; &nbsp; &nbsp;
+                <div class="col-sm" style="background-color: white;">
+                	<p style="color:black; margin-top: 9px; padding-top: 9px;"> 
+                     <svg data-id="SVG_PHONE__24" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" d="M20.097 20.535c-9.304 0-16.847-7.543-16.847-16.847M20.496 18.191l.227-1.33a1.939 1.939 0 00-.966-2.017l-2.763-1.54a1.936 1.936 0 00-2.48.511l-.973 1.27-.025-.016a13.162 13.162 0 01-4.815-4.825l1.27-.973c.761-.585.98-1.642.51-2.48l-1.54-2.763a1.935 1.935 0 00-2.017-.966l-3.674.626c0 .79.054 1.565.16 2.325M15.17 8.83l2.479-2.479M16.878 10.538l2.268-.512M13.462 7.122l.512-2.268"></path></svg>
+                    &nbsp;
+                    <a href="https://tawk.to/chat/639307b2b0d6371309d373f7/1gjr5c4r4" target = "_blank" class="btn btn-primary btn-sm" style="background-color: #245abc; border: 1px solid #245abc; border-radius: 12px;">START CHAT</a>                    
+                    <!-- <i> For booking assistance, call <strong>(1) 888-382-8909</strong></i> -->
+                    <br><br>
+                    Rental Number: <strong>1978994</strong>
+                    <br><br>
+                    Customer Number: <strong>065273</strong>
+
+                    </p>
+                 <br>
+                
+                </div>
+              </div>
+            <br>
+              <div class="row">
+                <div class="col-md-8" style="background-color: white;">
+	                <div class="container">            	
+		                <h5 style="color:black; margin-top: 9px; padding-top: 9px;">Policies
+		                	<br>	
+		                </h5>
+		                <!-- <br> -->
+			            <p>
+			            <!-- <form> -->
+                            <span style="color: black;"><svg data-id="SVG_DELAY_REFUND_GRAY__32" focusable="false" xmlns="http://www.w3.org/2000/svg" width="32" height="32" stroke="none" fill="none" viewBox="0 0 32 32"><path stroke="#292929" d="M11.781 11.746H7.103V7.067"></path><path stroke="#292929" d="M16.469 25.375a9.374 9.374 0 100-18.75 9.355 9.355 0 00-6.63 2.745l-2.365 2.368"></path><path stroke="none" fill="#292929" fill-rule="evenodd" d="M7.094 16.941a.893.893 0 01-.363-.075.823.823 0 01-.3-.211.913.913 0 01-.2-1.014.777.777 0 01.2-.3c.088-.087.188-.162.3-.212.237-.088.488-.088.725 0 .223.104.4.286.499.512.05.113.076.238.076.363 0 .25-.1.487-.275.65a.903.903 0 01-.662.287zm.436 4.213h.013a.922.922 0 01.338-1.275.927.927 0 011.275.337.939.939 0 11-1.625.938zm3.777 3.775a.928.928 0 01-.339-1.275.927.927 0 011.67.105.94.94 0 01-.868 1.295.886.886 0 01-.463-.125z" clip-rule="evenodd"></path><path stroke="#908F8F" d="M18.262 12.413h-2.43a1.604 1.604 0 00-.598 3.094l2.468.986a1.606 1.606 0 01-.599 3.093h-2.427m1.793-7.173V10.62m0 10.76v-1.794"></path></svg></span>
+                            <strong style="color: black;">Host's Cancellation Policy:</strong>
+                            <br>
+                            <span style="color:black;">
+                                <br>
+                            <strong>100% refund of amount payable</strong> <span>if you cancel at least 30 days before check-in.</span></span>
+                            <br>
+                            <br>
+                            <span style="color: black;">                                
+                                <strong>50% refund of amount payable</strong> <span> (minus the service fee) if you cancel at least 14 days before check-in.</span>
+                            </span>
+                            <br>
+                            <br>
+                            <span style="color: black;">
+                                <strong>No refund </strong> <span>if you cancel less than 14 days before check-in.</span>
+                            </span>
+                            <br>
+                            <span style="color: black;">Cancel by 11:59pm (property's local time) on the date listed to qualify for the refund amount.
+                            </span>
+                            <br>
+                            <br>
+                            <span style="color: black;">
+                                Please make sure you are happy with the cancellation policy for this booking, which will also apply if you have to cancel due to any Covid-19 related issues.
+                            </span>
+                            <br>
+                            <br>
+                            <span style="color: black;">
+                                <svg data-id="SVG_HOUSE__24" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" d="M18.514 8.87v10.319a1.5 1.5 0 01-1.5 1.5h-10a1.5 1.5 0 01-1.5-1.5v-6.4"></path><path stroke="currentColor" d="M2.75 10.864l8.265-7.197a1.5 1.5 0 011.97 0l8.265 7.197M5.514 8.158V4.242h1.475M14.264 20.702v-6.774h-4.5v6.774"></path></svg>
+                                <strong> Damage Policy: </strong> <span>You will be responsible for any damage to the rental property caused by you or your party during your stay.</span>
+                            </span>
+                            <br>
+                            <br>
+                            <span style="color: black;">
+                                <strong>Don't forget:</strong> <span> Add Trip Protection after completing your booking request.</span>
+                            </span>
+<!-- 						  <div class="row">
+						    <div class="col">
+						      <input type="text" style="border-radius: 12px;" class="form-control form-control-lg" placeholder="First name">
+						    </div>
+						    <div class="col">
+						      <input type="text" class="form-control form-control-lg" style="border-radius: 12px;" placeholder="Last name">
+						    </div>
+						  </div> -->
+<!-- 						  <br>					
+						  <div class="row">
+						    <div class="col">
+						      <input type="text" style="border-radius: 12px;" class="form-control form-control-lg" placeholder="Email">
+						    </div>
+						    <div class="col">						    	
+						      <input type="text" class="form-control form-control-lg" style="border-radius: 12px;" placeholder="Mobile Phone">
+						    </div>
+						  </div>
+						  <br> -->
+						  <!-- <p>
+						  	<h6><strong>Include a message for the host</strong></h6>
+						  	<span>Have comments, questions or special requests?</span>
+						  </p>
+
+						      <input type="text" style="border-radius: 12px;" class="form-control form-control-lg" placeholder="Your Message (Optional)">
+						      <br>
+							<p>
+						      We'll send your message to the host, but cannot guarantee any special requests. Please feel free to contact them after booking to confirm.
+						    </p> -->
+						 
+			            </p>
+			            <p>
+			            
+			            </p>
+				</div>
+	               
+                </div>	
+				&nbsp; &nbsp; &nbsp; &nbsp;
+                <div class="col-sm" style="background-color: white;">
+                	<h5 style="color:black; margin-top: 9px; padding-top: 9px;"> 
+                     <%= foundProperty.propertyname %>
+                    <br>    
+					</h5>
+					<%= foundProperty.state %>, <%= foundProperty.city %>                    
+                 	<br>
+                 	<i style="font-size: 11px;">"Excellent"</i>
+                 	<p style="font-size: 11px;">5/5 
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span> &nbsp;
+                    <span style="font-size: 11px;">(36)</span>
+                    <br>
+                    <br>                                        
+                </p>
+                <p>
+                	<form action = "/confirm_reservation/30926087590017694<%= foundProperty.id%>" method=
+                            "post">
+                          
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Check In</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" value="<%= startdate %>" name="startdate" disabled>
+                            
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Months of Stay</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" value="<%= totalmonths %>" name="totalmonths" disabled>
+                          </div>
+                          <input type="hidden" name="propertyid" value="<%= foundProperty.id %>">
+                          <input type="hidden" name="firstname" value="<%= firstname %>">
+                          <input type="hidden" name="lastname" value="<%= lastname %>">
+                          <input type="hidden" name="totalmonths" value="<%= totalmonths %>">
+                          <input type="hidden" name="email" value="<%= email %>">
+                          <input type="hidden" name="contactnum" value="<%= contactnum %>">
+                          <input type="hidden" name="message" value="<%= message %>">
+                          <input type="hidden" name="startdate" value="<%= startdate %>">
+                          <input type="hidden" name="bankid" value="<%= foundProperty.bankid %>">
+
+								<p><strong style="">Total:</strong> 
+                                    &nbsp;
+                                    &nbsp;
+                                    &nbsp;
+                                    <span><strong style="float: right;"><%= foundProperty.rent*3 %> EUR</strong></span>                                    
+                                </p>
+                                <p>Total includes</p>
+                                <p>* 1st month rent plus 2 months rent as security deposit</p>
+                                <p>*fees, not tax</p>                                
+                          <br>
+                        <!-- </form> -->
+                    <h5 style="color:black; margin-top: 9px; padding-top: 9px;"> 
+                     Payment Protection
+                    <br>    
+					</h5>
+					<p>Book & Pay on Vrbo and get:</p>
+					<p>
+						<li style="color: black;">
+							Comprehensive Payment Protection
+						</li>
+						<li style="color: black;">
+							Emergency Booking Assistance
+						</li>
+						<li style="color: black;">
+							24hr Customer Service
+						</li>						
+					</p>
+                </p>
+                
+                </div>
+
+<!--                  <p>
+                 	<br>
+                	<br>
+                	By clicking 'Agree & continue' you are agreeing to our Terms and Conditions, Privacy Policy, and to receive booking-related texts. Standard messaging rates may apply.
+                </p> -->
+                <div class="row">
+                	
+                	<div class="col-md">
+                	<br>
+
+<!--                     <button type="submit" class="btn btn-primary btn-lg btn-block" style="background-color: #245abc; border: 1px solid #245abc; border-radius: 12px; margin-left: 10%;">Agree & continue</button> -->                		
+                	</div>
+                	<div class="col-sm">
+                		
+                	</div>
+                </div>
+
+                </form>
+              </div>              
+
+
+            </div>
+            <br>
+            <br>
+                        
+
+            </div>
+            <br>            
+        </div>
+    </div>
+    <!-- /Policy -->
+
+    </div>
+
+
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-light pt-5 px-sm-3 px-md-5">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <a href="#" class="navbar-brand">
+                    <h1 class="mb-2 mt-n2 display-5 text-uppercase" style="color: #15326f;"><span class="" style="color: #15326f;">VRBO</span>
+                    </h1>
+                </a>
+                <p>© 2022 Vrbo, an Expedia Group company. All rights reserved.
+Terms and Conditions · Privacy Policy · Do Not Sell My Personal Information</p>
+                <div class="d-flex justify-content-start mt-4">
+                    <a class="btn btn-outline-secondary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-secondary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-secondary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-secondary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-secondary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="font-weight-bold mb-4">Categories</h4>
+                <div class="d-flex flex-wrap m-n1">
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Politics</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Business</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Corporate</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Sports</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Health</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Education</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Science</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Technology</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Foods</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Entertainment</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Travel</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Lifestyle</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="font-weight-bold mb-4">Tags</h4>
+                <div class="d-flex flex-wrap m-n1">
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Politics</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Business</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Corporate</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Sports</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Health</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Education</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Science</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Technology</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Foods</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Entertainment</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Travel</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Lifestyle</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="font-weight-bold mb-4">Quick Links</h4>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right text-dark mr-2"></i>About</a>
+                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right text-dark mr-2"></i>Advertise</a>
+                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right text-dark mr-2"></i>Privacy & policy</a>
+                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right text-dark mr-2"></i>Terms & conditions</a>
+                    <a class="text-secondary" href="#"><i class="fa fa-angle-right text-dark mr-2"></i>Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid py-4 px-sm-3 px-md-5">
+        <p class="m-0 text-center">
+            &copy; <a class="font-weight-bold" style="color: #15326f;" href="#">VRBO</a>. All Rights Reserved. 
+			
+			<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+			Designed by <a class="font-weight-bold" style="color: #15326f;" href="#">VRBO Dev</a>
+        </p>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-dark back-to-top"><i class="fa fa-angle-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/easing/easing.min.js"></script>
+    <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="/mail/jqBootstrapValidation.min.js"></script>
+    <script src="/mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="/js/main.js"></script>
+<script type="text/javascript">
+    $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+</script>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered  modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Amenities</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <!-- <hr> -->
+      </div>
+      <div class="modal-body">
+            <div class="container">
+               <h5>Essentials</h5>                
+              <div class="row">
+                <div class="col-sm">
+                  <li style = "color: black;">Internet</li>
+                  <li style = "color: black;">Linens provided</li>
+                  <!-- <li style = "color: black;">Towels provided</li> -->
+                </div>
+                <div class="col-sm">
+                  <li style = "color: black;">Heating</li>
+                  <li style = "color: black;">Air Conditioning</li>
+                  <!-- <li style = "color: black;">Wireless Internet</li> -->
+                </div>
+                <div class="col-sm">
+                  <li style = "color: black;">Toilet Paper</li>
+                  <li style = "color: black;">Wifi speed 100+ Mbps</li>
+                  <!-- <li style = "color: black;">Free Wifi</li> -->
+                </div>
+              </div>
+            </div>
+            <hr>
+            <!-- <br> -->
+            <!-- 2 -->
+            <div class="container">
+               <h5>Kitchen</h5>                
+              <div class="row">
+                <div class="col-sm">
+                  <li style = "color: black;">Microwave</li>
+                  <!-- <li style = "color: black;">Refrigerator</li> -->
+                  <li style = "color: black;">Dishes & Utensils</li>
+                  <!-- <li style = "color: black;">Coffee Maker</li> -->
+                </div>
+
+                <div class="col-sm">
+                  <li style = "color: black;">Kitchen</li>
+                  <!-- <li style = "color: black;">Dishwasher</li> -->
+                  <li style = "color: black;">Oven</li>
+                  <!-- <li style = "color: black;">Blender</li> -->
+                </div>
+                <div class="col-sm">
+                  <li style = "color: black;">Dishes & utensils for kids</li>
+                  <!-- <li style = "color: black;">Dining table</li> -->
+                  <li style = "color: black;">Kitchen island</li>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <!-- <br> -->
+            <!-- 3 -->
+            <div class="container">
+               <h5>Laundry</h5>                
+              <div class="row">
+                <div class="col-sm">
+                  <li style = "color: black;">Washing Machine</li>
+<!--                   <li style = "color: black;">Linens provided</li>
+                  <li style = "color: black;">Towels provided</li> -->
+                </div>
+                <div class="col-sm">
+                  <li style = "color: black;">Clothes Dryer</li>
+<!--                   <li style = "color: black;">Air Conditioning</li>
+                  <li style = "color: black;">Wireless Internet</li> -->
+                </div>
+                <div class="col-sm">
+                  <li style = "color: black;">Iron & Board</li>
+<!--                   <li style = "color: black;">Wifi speed 100+ Mbps</li>
+                  <li style = "color: black;">Free Wifi</li> -->
+                </div>
+              </div>
+            </div>
+            <hr>
+           
+            <!-- 3 -->
+            <div class="container">
+               <h5>Entertainment</h5>                
+              <div class="row">
+                <div class="col-sm">
+                  <li style = "color: black;">Television</li>
+<!--                   <li style = "color: black;">Linens provided</li>
+                  <li style = "color: black;">Towels provided</li> -->
+                </div>
+                <div class="col-sm">
+                  <li style = "color: black;">Smart TV</li>
+<!--                   <li style = "color: black;">Air Conditioning</li>
+                  <li style = "color: black;">Wireless Internet</li> -->
+                </div>
+                <div class="col-sm">
+<!--                   <li style = "color: black;">Toilet Paper</li>
+                  <li style = "color: black;">Wifi speed 100+ Mbps</li>
+                  <li style = "color: black;">Free Wifi</li> -->
+                </div>
+              </div>
+            </div>
+      <!--       <hr>
+            <br> -->
+
+      </div>
+<!--       <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+<% } else { %>
+    
+    <main>
+        <div id="error_page">
+            <div class="wrapper">
+                <div class="container">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-xl-7 col-lg-9">
+                            <h2>404 <i class="icon_error-triangle_alt"></i></h2>
+                            <p>We're sorry, but the page you were looking for doesn't exist.</p>
+                            <form>
+                                <div class="search_bar_error">
+                                    <input type="text" class="form-control" placeholder="What are you looking for?">
+                                    <input type="submit" value="Search">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<% } %>
+</body>
+
+</html>

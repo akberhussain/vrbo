@@ -263,7 +263,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <!-- Traffic sources -->
             <div class="panel panel-flat">
                 <div class="panel-heading">
-                    <h1 class="panel-title">Properties</h1>
+                    <h1 class="panel-title">Banks</h1>
                 </div>
                         <div class="container-fluid">
                         <div class="row">
@@ -271,41 +271,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                <table class = "table table-striped table-bordered table-hover table-responsive box-shadow-table">
                                     <thead class = "thead-inverse">
                                         <tr>
-                                            <th>Property Name</th>
-                                            <th>Square Meters</th>
-                                            <th>Rooms</th>
-                                            <th>City</th>
-                                            <th>State</th>
-                                            <th>Host Name</th>
-                                            <!-- <th>Host Email</th> -->
-                                            <th>Rent</th>
-                                            <th>Total Clicks</th>
+                                            <th>NAME</th>
+                                            <th>IBAN</th>
+                                            <th>SWIFT</th>
+                                            <th>BANK</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <% properties.forEach(function(property){ %>
+                                        <% banks.forEach(function(bank){ %>
                                         <tr>
-                                            <td><a href="/property_booking/30926087590017694<%= property.id %>" target = "_blank" style="color: inherit; text-decoration: inherit;"><%= property.propertyname %></a>
-                                                </td>
-                                            <td><%= property.squaremeters %></td>
-                                            <td><%= property.rooms %></td>
-                                            <td><%= property.city %></td>
-                                            <td><%= property.state %></td>
-                                            <td><%= property.hostname %></td>
-                                            <td><%= property.rent %> eur/month</td>
-                                            <td><%= Math.round((property.totalclicks)/2) %></td>
+                                            <td><%= bank.name %></td>
+                                            <td><%= bank.iban %></td>
+                                            <td><%= bank.swift %></td>
+                                            <td><%= bank.bank %></td>
                                             <td>
-                                                <form action = "/delete/<%= property.id %>?_method=delete" method = "post" style="display: inline;">
-                                                    <input type="submit" name="Delete Link" value="Delete Link" class="btn btn-danger">
+                                                <form action = "/delete_bank/<%= bank.id %>?_method=delete" method = "post" style="display: inline;">
+                                                    <input type="submit" name="Delete Bank" value="Delete Bank" class="btn btn-danger">
                                                 </form>
                                             </td>
 
                                         </tr>
                                         <% }); %>
                                     </tbody>
-                                </table>    
-                                <br>
+                                </table>   
+                                <br> 
                             </div>
                         </div>
                         </div>

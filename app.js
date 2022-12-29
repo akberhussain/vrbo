@@ -19,94 +19,7 @@ var User = require("./models/user");
 const dotenv = require("dotenv");
 dotenv.config();
 
-// var promise = mongoose.connect('mongodb://akberhussain:123abc..@cluster0.qhauv.mongodb.net/mydbforminkoffers?retryWrites=true&w=majority', {
-//   useMongoClient: true,
-// });
 
-// const username = "<mongodb username>";
-// const password = "<password>";
-// const cluster = "<cluster name>";
-// const dbname = "myFirstDatabase";
-
-
-
-// async function main () {
-//     try {
-// 		mongoose.connect(
-// 		  `mongodb+srv://akberhussain:123abc..@cluster0.qhauv.mongodb.net/mydbforminkoffers?retryWrites=true&w=majority`, 
-// 		  {
-// 		    useNewUrlParser: true,
-// 		    useFindAndModify: false,
-// 		    useUnifiedTopology: true
-// 		    // ,useMongoClient: true   
-// 		  }
-// 		);
-
-//     } catch (e) {
-//         console.error(e);
-//     } 
-// }
-
-// main().catch(console.error);
-
-
-// mongoose.connect(
-//   `mongodb+srv://akberhussain:123abc..@cluster0.qhauv.mongodb.net/mydbforminkoffers?retryWrites=true&w=majority`, 
-//   {
-//     useNewUrlParser: true,
-//     useFindAndModify: false,
-//     useUnifiedTopology: true
-//     // ,useMongoClient: true   
-//   }
-// );
-
-  // useMongoClient: true,
-  // autoIndex: false, // Don't build indexes
-  // reconnectTries: Number.MAX_VALUE, // Never stop trying to reconnect
-  // reconnectInterval: 500, // Reconnect every 500ms
-  // poolSize: 10, // Maintain up to 10 socket connections
-  // // If not connected, return errors immediately rather than waiting for reconnect
-  // bufferMaxEntries: 0
-
-
-// const db = mongoose.connection;
-// db.on("error", console.error.bind(console, "connection error: "));
-// db.once("open", function () {
-//   console.log("Connected successfully");
-// });
-
-//=======================================================================================================
-
-// const { MongoClient } = require('mongodb');
-
-// async function main () {
-//     var uri = "mongodb+srv://akberhussain:123abc..@cluster0.qhauv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-
-//     var client = new MongoClient(uri);
-
-//     try {
-//         await client.connect();
-//         await listDatabases(client);
-
-//     } catch (e) {
-//         console.error(e);
-//     } finally {
-//         await client.close();
-//     }
-// }
-
-// main().catch(console.error);
-
-// async function listDatabases(client) {
-//     const results = await client.db().admin().listDatabases();
-
-//     console.log("databases");
-//         console.log(mongoose.connection.readyState);
-
-//     results.databases.forEach(db => {
-//         console.log(`- ${db.name}`)
-//     })    
-// }
 //======================================================================================================
 
 app.set("view engine", "ejs");
@@ -123,9 +36,6 @@ app.use(require("express-session")({
     resave: false,
     saveUninitialized: false
 }));
-
-
-
 
 
 
@@ -184,42 +94,16 @@ app.use(function(req, res, next){
 });
 
 
-// app.all('*', function(req, res, next){
-//     // console.log('req start: ',req.secure, req.hostname, req.url, app.get('port'));
-//     if (req.secure) {
-//         return next();
-//     }
-
-//     res.redirect('https://'+'www.minkoffers.com:8443' + '' + req.url);
-// });
-
 app.use(indexRoutes);
 
-
-// app.listen(process.env.PORT, process.env.IP, function(){
-//     console.log("Helpbit Server has Started on port 3000 !!");
-// });
 
 
 app.listen(process.env.PORT || 5001, function(){
     console.log("Local Server has Started on port 5000!!");
 });
 
-// console.log(ssl.key);
-//  console.log(ssl.cert);
+
 
 // ========================== 2022-14-04 ==============================
 
-
- // app.set('port', process.env.SSLPORT || 8443);
-
-// var server = https.createServer(options, app);
-
-// server.listen(process.env.SSLPORT || 8443, () => {
-//     console.log('Express server listening on port ' + app.get('port'));
-// });
-
-// const http = require('http');
-// http.createServer(app).listen(8080)
-// https.createServer(options, app).listen(8443)
 // ==================================================================== 

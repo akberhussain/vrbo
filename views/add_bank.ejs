@@ -179,14 +179,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <a href="#" class=" hvr-bounce-to-right"><i class="fa fa-indent nav_icon"></i> <span class="nav-label">Listings</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li><a href="/add_listing" class=" hvr-bounce-to-right"> <i class="fa fa-area-chart nav_icon"></i>Add Listing</a></li>
-<!--                             <li><a href="/show_listings" class=" hvr-bounce-to-right"> <i class="fa fa-area-chart nav_icon"></i>Show All Listings</a></li>
-                            
-                            <li><a href="maps.html" class=" hvr-bounce-to-right"><i class="fa fa-map-marker nav_icon"></i>Maps</a></li> -->
-			
 						<li><a href="/show_listings" class=" hvr-bounce-to-right"><i class="fa fa-file-text-o nav_icon"></i>Show All Listings</a></li>
 
 					   </ul>
                     </li>
+					 
                     <li>
                         <a href="#" class=" hvr-bounce-to-right"><i class="fa fa-info-circle nav_icon"></i> <span class="nav-label">Banks</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -194,8 +191,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="/show_banks" class=" hvr-bounce-to-right"><i class="fa fa-file-text-o nav_icon"></i>Show All Banks</a></li>
 
 					   </ul>
-                    </li>                    
-					 <li>
+                    </li>
+                    <li>					 	
                         <a href="/admin_home" class=" hvr-bounce-to-right"><i class="fa fa-inbox nav_icon"></i> <span class="nav-label">Reports</span> </a>
                     </li>
                     
@@ -253,181 +250,52 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		    	<h2>
 				<a href="/admin_home">Home</a>
 				<i class="fa fa-angle-right"></i>
-				<span>Add Listing</span>
+				<span>Add Bank</span>
 				</h2>
 		    </div>
 		<!--//banner-->
  	 <!--faq-->
 	<div class="grid-form">
 		<div class="grid-form1">
-			<h3>Add Listing Details</h3>
+			<h3>Add Bank Details</h3>
 	         <div class="tab-content">
 					<div class="tab-pane active" id="horizontal-form">
-						<form class="form-horizontal" action="/add_listing" method="post" encType='multipart/form-data'>
+						<form class="form-horizontal" action="/add_bank" method="post">
 							<div class="form-group">
-								<label for="propertyname" class="col-sm-2 control-label">Property Name</label>
+								<label for="name" class="col-sm-2 control-label">NAME: </label>
 								<div class="col-sm-8">
-									<input type="text" class="form-control1" name = "propertyname" id="propertyname" placeholder="Property Name" required>
+									<input type="text" class="form-control1" name = "name" id="name" placeholder="Name: " required>
 								</div>
 <!-- 								<div class="col-sm-2">
 									<p class="help-block">Your help text!</p>
 								</div> -->
 							</div>
 							<div class="form-group">
-								<label for="squaremeters" class="col-sm-2 control-label">Square Meters</label>
+								<label for="iban" class="col-sm-2 control-label">IBAN: </label>
 								<div class="col-sm-8">
-									<input type="text" class="form-control1" name = "squaremeters" id="squaremeters" placeholder="Square Meters">
+									<input type="text" class="form-control1" name = "iban" id="iban" placeholder="IBAN: ">
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="city" class="col-sm-2 control-label">City</label>
+								<label for="swift" class="col-sm-2 control-label">SWIFT: </label>
 								<div class="col-sm-8">
-									<input type="text" class="form-control1" name = "city" id="city" placeholder="City">
+									<input type="text" class="form-control1" name = "swift" id="swift" placeholder="SWIFT: ">
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="state" class="col-sm-2 control-label">State</label>
+								<label for="bank" class="col-sm-2 control-label">BANK: </label>
 								<div class="col-sm-8">
-									<input type="text" class="form-control1" name = "state" id="state" placeholder="State">
+									<input type="text" class="form-control1" name = "bank" id="bank" placeholder="BANK: ">
 								</div>
 							</div>
-							<div class="form-group">
-								<label for="zipcode" class="col-sm-2 control-label">Zipcode</label>
-								<div class="col-sm-8">
-									<input type="text" class="form-control1" name = "zipcode" id="zipcode" placeholder="Zipcode">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="rooms" class="col-sm-2 control-label">Total Rooms</label>
-								<div class="col-sm-8">
-									<input type="Number" class="form-control1" name = "rooms" id="rooms" placeholder="Number Of Rooms">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="description" class="col-sm-2 control-label">Description</label>
-								<div class="col-sm-8">
-									<input type="text" class="form-control1" name = "description" id="description" placeholder="Description">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="hostname" class="col-sm-2 control-label">Host Name</label>
-								<div class="col-sm-8">
-									<input type="text" class="form-control1" name = "hostname" id="hostname" placeholder="Host Name">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="hostemail" class="col-sm-2 control-label">Host Email</label>
-								<div class="col-sm-8">
-									<input type="text" class="form-control1" name = "hostemail" id="hostemail" placeholder="Host Email">
-								</div>
-								
-							</div>
-							<div class="form-group">
-								<label for="rent" class="col-sm-2 control-label">Rent in EUR</label>
-								<div class="col-sm-8">
-									<input type="number" class="form-control1" id="rent" name = "rent"placeholder="Rent in EUR / Month">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="bankid" class="col-sm-2 control-label">Select Bank</label>
-								<div class="col-sm-8">
-									<select class="form-control1" id="bankid" name = "bankid">
-										<% banks.forEach(function(bank){ %>
-										<option value="<%= bank.id %>"><%= bank.name %> / <%= bank.iban %> / <%= bank.bank %></option>
-										<% }); %>
-									</select>
-								</div>
-							</div>							
-							<div class="form-group">
-						        <label for="propertyimage" class="col-sm-2 control-label">Property Photo</label>
-						        <div class="col-sm-8">
-							        <input type="file" id="propertyimage" name="propertyimage">
-							        <p class="help-block">Upload the photo of the listing</p>
-							    </div>    
-						    </div>
-						    <div class="form-group">
-						        <label for="propertyimage2" class="col-sm-2 control-label">Property Photo 2</label>
-						        <div class="col-sm-8">
-							        <input type="file" id="propertyimage2" name="propertyimage2">
-							        <p class="help-block">Upload the 2nd photo of the listing</p>
-							    </div>    
-						    </div>
-						    <div class="form-group">
-						        <label for="propertyimage3" class="col-sm-2 control-label">Property Photo 3</label>
-						        <div class="col-sm-8">
-							        <input type="file" id="propertyimage3" name="propertyimage3">
-							        <p class="help-block">Upload the 3rd photo of the listing</p>
-							    </div>    
-						    </div>
-						    <div class="form-group">
-						        <label for="propertyimage4" class="col-sm-2 control-label">Property Photo 4</label>
-						        <div class="col-sm-8">
-							        <input type="file" id="propertyimage4" name="propertyimage4">
-							        <p class="help-block">Upload the 4th photo of the listing</p>
-							    </div>    
-						    </div>
-						    <div class="form-group">
-						        <label for="propertyimage5" class="col-sm-2 control-label">Property Photo 5</label>
-						        <div class="col-sm-8">
-							        <input type="file" id="propertyimage5" name="propertyimage5">
-							        <p class="help-block">Upload the 5th photo of the listing</p>
-							    </div>    
-						    </div>
-						    <div class="form-group">
-						        <label for="propertyimage6" class="col-sm-2 control-label">Property Photo 6</label>
-						        <div class="col-sm-8">
-							        <input type="file" id="propertyimage6" name="propertyimage6">
-							        <p class="help-block">Upload the 6th photo of the listing</p>
-							    </div>    
-						    </div>
-						    <div class="form-group">
-						        <label for="propertyimage7" class="col-sm-2 control-label">Property Photo 7</label>
-						        <div class="col-sm-8">
-							        <input type="file" id="propertyimage7" name="propertyimage7">
-							        <p class="help-block">Upload the 7th photo of the listing</p>
-							    </div>    
-						    </div>
-						    <div class="form-group">
-						        <label for="propertyimage8" class="col-sm-2 control-label">Property Photo 8</label>
-						        <div class="col-sm-8">
-							        <input type="file" id="propertyimage8" name="propertyimage8">
-							        <p class="help-block">Upload the 8th photo of the listing</p>
-							    </div>    
-						    </div>
-						    <div class="form-group">
-						        <label for="propertyimage9" class="col-sm-2 control-label">Property Photo 9</label>
-						        <div class="col-sm-8">
-							        <input type="file" id="propertyimage9" name="propertyimage9">
-							        <p class="help-block">Upload the 9th photo of the listing</p>
-							    </div>    
-						    </div>
-						    <div class="form-group">
-						        <label for="propertyimage10" class="col-sm-2 control-label">Property Photo 10</label>
-						        <div class="col-sm-8">
-							        <input type="file" id="propertyimage10" name="propertyimage10">
-							        <p class="help-block">Upload the 10th photo of the listing</p>
-							    </div>    
-						    </div>
-						    <div class="form-group">
-								<label for="imagecaption" class="col-sm-2 control-label">Add Images Caption</label>
-								<div class="col-sm-8">
-									<input type="text" class="form-control1" name = "imagecaption" id="imagecaption" placeholder="Add Images Caption" required>
-								</div>
-							</div>
-						    <div class="form-group">
-						        <label for="hostimage" class="col-sm-2 control-label">Host Photo</label>
-						        <div class="col-sm-8">
-							        <input type="file" id="hostimage" name="hostimage">
-							        <p class="help-block">Upload the photo of the Host</p>
-							    </div>    
-						    </div>
 						    <div class="form-group">
 						        <label for="" class="col-sm-2 control-label"></label>
 						        <div class="col-sm-8">
-							        <input type="submit" value ="Add Listing" class="btn btn-primary" id="">
+							        <input type="submit" value ="Add Bank" class="btn btn-primary" id="">
 							        <!-- <p class="help-block">Upload the photo of the Host</p> -->
 							    </div>    
 						    </div>							
+						   						
 <!-- 							<div class="form-group">
 								<label for="disabledinput" class="col-sm-2 control-label">Disabled Input</label>
 								<div class="col-sm-8">
