@@ -275,7 +275,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <th>IBAN</th>
                                             <th>SWIFT</th>
                                             <th>BANK</th>
-                                            <th>Action</th>
+                                            <!-- <th>Action</th> -->
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -285,11 +285,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <td><%= bank.iban %></td>
                                             <td><%= bank.swift %></td>
                                             <td><%= bank.bank %></td>
-                                            <td>
+                                        <!--     <td>
                                                 <form action = "/delete_bank/<%= bank.id %>?_method=delete" method = "post" style="display: inline;">
                                                     <input type="submit" name="Delete Bank" value="Delete Bank" class="btn btn-danger">
                                                 </form>
-                                            </td>
+                                            </td> -->
 
                                         </tr>
                                         <% }); %>
