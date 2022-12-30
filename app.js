@@ -15,7 +15,7 @@ var localStrategy = require("passport-local").Strategy;
 var passportLocalMongoose = require("passport-local-mongoose");
 var methodOverride = require("method-override");
 var jquery = require("jquery");
-var User = require("./models/user");
+// var User = require("./models/user");
 const dotenv = require("dotenv");
 dotenv.config();
 
