@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Helpme : Get Services on the go in UAE">
+    <meta name="author" content="Helpme">
+    <title>Vrbo | Book your vacation rentals: beach houses, cabins, condos &amp; more</title>
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="/img/favicon_1.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="/img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="/img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="/img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="/img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- GOOGLE WEB FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+    <!-- BASE CSS -->
+    <link href="/css2/bootstrap.min.css" rel="stylesheet">
+    <link href="/css2/style.css" rel="stylesheet">
+    <link href="/css2/vendors.css" rel="stylesheet">
+
+    <!-- ALTERNATIVE COLORS CSS -->
+    <link href="#" id="colors" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link href="/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">   
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/css3/style.css" rel="stylesheet">
+</head>
+
+<body style="background-color: white;">
+
+<% if(foundProperty && (foundProperty.propertyname )) { %>
+
+<div id="page">
+        
+    <header class="header menu_fixed" style="background-color: #f9f8f7; padding-bottom: 10px;">
+        <div id="logo">
+            <a href="#" title="Sparker - Directory and listings template">
+                <img src="/img/logo-v2.svg"  alt="" class="logo_normal">
+                <img src="/img/logo-v2.svg"  alt="" class="logo_sticky">
+            </a>
+        </div>
+        <ul id="top_menu">
+            <li><a href="/admin_login" class="btn_add" style="background-color: #15326f; text-decoration: none;" target="">List Your Property</a></li>
+            <li><a href="#sign-in-dialog" id="sign-in" class="login" title="Sign In" style="color: #15326f">Sign In</a></li>
+            <!-- <li><a href="#" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li> -->
+        </ul>
+        <!-- /top_menu -->
+        <a href="#menu" class="btn_mobile">
+            <div class="hamburger hamburger--spin" id="hamburger">
+                <div class="hamburger-box">
+                    <div class="hamburger-inner"></div>
+                </div>
+            </div>
+        </a>
+        <nav id="menu" class="main-menu">
+            <ul>
+            </ul>
+        </nav>
+    </header>
+    <!-- /header -->
+</div>
+
+    <!-- Main News Slider Start -->
+    <div class="container-fluid py-3" style="margin-top: 120px; background-color: white;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="">
+                        <div class="container">
+                            <nav class="breadcrumb bg-transparent m-0 p-0">
+                                <a class="breadcrumb-item" href="#" style="color:black;">Vrbo</a>
+                                <a class="breadcrumb-item" href="#" style="color:black;"><%= foundProperty.state %></a>
+                                <a class="breadcrumb-item active" href="#"><%= foundProperty.city %></a>
+                                <!-- <span class="breadcrumb-item active"></span> -->
+                            </nav>
+                        </div>
+                    </div>
+                    <br>
+                    <h4><%= foundProperty.propertyname.substring(0,40) %> 
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        <button type="button" class="btn btn-outline-dark" style="border-radius: 12px;" >
+                        <i class="ti-save"></i>
+                        Save</button>
+                        &nbsp;
+                        <button type="button" class="btn btn-outline-dark" style="border-radius: 12px;" >
+                        <span><small class="fab fa-facebook-f mr-2"></small></span>
+                        Share</button>
+                    </h4>
+
+                    <div class="owl-carousel owl-carousel-2 carousel-item-1 position-relative mb-3 mb-lg-0">
+                        <div class="position-relative overflow-hidden" style="height: 435px;">
+                    <img class="img-fluid h-100" src= <%= foundProperty.propertyimage.split("public").pop() %> style="object-fit: cover;">
+                            <div class="overlay">
+                                <div class="mb-1">
+                                    <a class="text-white" href=""><%= foundProperty.state %></a>
+                                    <span class="px-2 text-white">/</span>
+                                    <a class="text-white" href=""><%= foundProperty.squaremeters %> Square Meters</a>
+                                </div>
+                                <a class="h3 m-0 text-white font-weight-bold" href="#"><%= foundProperty.imagecaption %></a>
+                            </div>
+                        </div>
+                        <div class="position-relative overflow-hidden" style="height: 435px;">
+                        <img class="img-fluid h-100" src= <%= foundProperty.propertyimage2.split("public").pop() %> style="object-fit: cover;">
+                            <div class="overlay">
+                                <div class="mb-1">
+                                    <a class="text-white" href=""> <%= foundProperty.state %></a>
+                                    <span class="px-2 text-white">/</span>
+                                    <a class="text-white" href=""><%= foundProperty.squaremeters %> Square Meters</a>
+                                </div>
+                                <a class="h3 m-0 text-white font-weight-bold" href=""><%= foundProperty.imagecaption %></a>
+                            </div>
+                        </div>
+                        <div class="position-relative overflow-hidden" style="height: 435px;">
+                    <img class="img-fluid h-100" src= <%= foundProperty.propertyimage3.split("public").pop() %> style="object-fit: cover;">
+                            <div class="overlay">
+                                <div class="mb-1">
+                                    <a class="text-white" href=""><%= foundProperty.state %></a>
+                                    <span class="px-2 text-white">/</span>
+                                    <a class="text-white" href=""><%= foundProperty.squaremeters %> Square Meters</a>
+                                </div>
+                                <a class="h3 m-0 text-white font-weight-bold" href="#"><%= foundProperty.imagecaption %></a>
+                            </div>
+                        </div>
+                        <div class="position-relative overflow-hidden" style="height: 435px;">
+                    <img class="img-fluid h-100" src= <%= foundProperty.propertyimage4.split("public").pop() %> style="object-fit: cover;">
+                            <div class="overlay">
+                                <div class="mb-1">
+                                    <a class="text-white" href=""><%= foundProperty.state %></a>
+                                    <span class="px-2 text-white">/</span>
+                                    <a class="text-white" href=""><%= foundProperty.squaremeters %> Square Meters</a>
+                                </div>
+                                <a class="h3 m-0 text-white font-weight-bold" href="#"><%= foundProperty.imagecaption %></a>
+                            </div>
+                        </div>
+                        <div class="position-relative overflow-hidden" style="height: 435px;">
+                    <img class="img-fluid h-100" src= <%= foundProperty.propertyimage5.split("public").pop() %> style="object-fit: cover;">
+                            <div class="overlay">
+                                <div class="mb-1">
+                                    <a class="text-white" href=""><%= foundProperty.state %></a>
+                                    <span class="px-2 text-white">/</span>
+                                    <a class="text-white" href=""><%= foundProperty.squaremeters %> Square Meters</a>
+                                </div>
+                                <a class="h3 m-0 text-white font-weight-bold" href="#"><%= foundProperty.imagecaption %></a>
+                            </div>
+                        </div>
+                        <div class="position-relative overflow-hidden" style="height: 435px;">
+                    <img class="img-fluid h-100" src= <%= foundProperty.propertyimage6.split("public").pop() %> style="object-fit: cover;">
+                            <div class="overlay">
+                                <div class="mb-1">
+                                    <a class="text-white" href=""><%= foundProperty.state %></a>
+                                    <span class="px-2 text-white">/</span>
+                                    <a class="text-white" href=""><%= foundProperty.squaremeters %> Square Meters</a>
+                                </div>
+                                <a class="h3 m-0 text-white font-weight-bold" href="#"><%= foundProperty.imagecaption %></a>
+                            </div>
+                        </div>
+                        <div class="position-relative overflow-hidden" style="height: 435px;">
+                    <img class="img-fluid h-100" src= <%= foundProperty.propertyimage7.split("public").pop() %> style="object-fit: cover;">
+                            <div class="overlay">
+                                <div class="mb-1">
+                                    <a class="text-white" href=""><%= foundProperty.state %></a>
+                                    <span class="px-2 text-white">/</span>
+                                    <a class="text-white" href=""><%= foundProperty.squaremeters %> Square Meters</a>
+                                </div>
+                                <a class="h3 m-0 text-white font-weight-bold" href="#"><%= foundProperty.imagecaption %></a>
+                            </div>
+                        </div>
+                        <div class="position-relative overflow-hidden" style="height: 435px;">
+                    <img class="img-fluid h-100" src= <%= foundProperty.propertyimage8.split("public").pop() %> style="object-fit: cover;">
+                            <div class="overlay">
+                                <div class="mb-1">
+                                    <a class="text-white" href=""><%= foundProperty.state %></a>
+                                    <span class="px-2 text-white">/</span>
+                                    <a class="text-white" href=""><%= foundProperty.squaremeters %> Square Meters</a>
+                                </div>
+                                <a class="h3 m-0 text-white font-weight-bold" href="#"><%= foundProperty.imagecaption %></a>
+                            </div>
+                        </div>
+                        <div class="position-relative overflow-hidden" style="height: 435px;">
+                    <img class="img-fluid h-100" src= <%= foundProperty.propertyimage9.split("public").pop() %> style="object-fit: cover;">
+                            <div class="overlay">
+                                <div class="mb-1">
+                                    <a class="text-white" href=""><%= foundProperty.state %></a>
+                                    <span class="px-2 text-white">/</span>
+                                    <a class="text-white" href=""><%= foundProperty.squaremeters %> Square Meters</a>
+                                </div>
+                                <a class="h3 m-0 text-white font-weight-bold" href="#"><%= foundProperty.imagecaption %></a>
+                            </div>
+                        </div>
+                        <div class="position-relative overflow-hidden" style="height: 435px;">
+                    <img class="img-fluid h-100" src= <%= foundProperty.propertyimage10.split("public").pop() %> style="object-fit: cover;">
+                            <div class="overlay">
+                                <div class="mb-1">
+                                    <a class="text-white" href=""><%= foundProperty.state %></a>
+                                    <span class="px-2 text-white">/</span>
+                                    <a class="text-white" href=""><%= foundProperty.squaremeters %> Square Meters</a>
+                                </div>
+                                <a class="h3 m-0 text-white font-weight-bold" href="#"><%= foundProperty.imagecaption %></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
+                        <h4 class="m-0">Booking details</h4>
+                        <a class="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
+                    </div>
+                    <div class="position-relative overflow-hidden mb-3" style="height: 80px;">
+                        <!-- <img class="img-fluid w-100 h-100" src="img/cat-500x80-1.jpg" style="object-fit: cover;">
+                        <a href="" class="overlay align-items-center justify-content-center h4 m-0 text-white text-decoration-none">
+                            Business
+                        </a> -->
+                        <%= foundProperty.rent %> Eur /month
+                        <br>
+                        <br>
+                        <p style="color: black;"> <i class="ti-info"> </i> Please enter number of guests.</p>
+
+                    </div>
+                        <form action = "/confirm_booking/30926087590017694<%= foundProperty.id%>" method=
+                            "post">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Check In</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Please enter the date of starting i.e 1st January 2023" name="startdate" required>
+                            <small id="emailHelp" class="form-text text-muted">Please enter the date of starting i.e 1st January 2023</small>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">Total Number Months you need to stay</label>
+                            <!-- <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+
+                                <select id = "exampleInputPassword1" class="form-control" name = "totalmonths" required>
+                                    <!-- <option value="1">Total Number Of Months</option>  -->
+                                    <option value="1">1 Month</option>
+                                    <option value="2">2 Months</option>
+                                    <option value="3">3 Months</option>
+                                    <option value="4">4 Months</option>
+                                    <option value="5">5 Months</option>
+                                    <option value="6">6 Months</option>
+                                    <option value="7">7 Months</option>
+                                    <option value="8">8 Months</option>
+                                    <option value="9">9 Months</option>
+                                    <option value="10">10 Months</option>
+                                    <option value="11">11 Months</option>
+                                    <option value="12">12 Months</option>
+                                    <option value="13">13 Months</option>
+                                    <option value="14">14 Months</option>
+                                    <option value="15">15 Months</option>
+                                    <option value="16">16 Months</option>
+                                    <option value="17">17 Months</option>
+                                    <option value="18">18 Months</option>
+                                    <option value="19">19 Months</option>
+                                    <option value="20">20 Months</option>
+                                    <option value="21">21 Months</option>
+                                    <option value="22">22 Months</option>
+                                    <option value="23">23 Months</option>
+                                    <option value="24">24 Months</option>
+                                </select>
+                                <br>
+                                <p><strong style="">Total:</strong> 
+                                    &nbsp;
+                                    &nbsp;
+                                    &nbsp;
+                                    <span><strong style="float: right;"><%= foundProperty.rent*3 %> EUR</strong></span>                                    
+                                </p>
+                                <p>Total includes</p>
+                                <p>* 1st month rent plus 2 months rent as security deposit</p>
+                                <p>*fees, not tax</p>
+                                
+                          </div>
+                          <br>
+                          <button type="submit" class="btn btn-primary btn-block" style="background-color: #245abc; border: 1px solid #245abc; border-radius: 12px; margin-left: 10%;">Book now</button>
+                        </form>
+                        <br>
+                        <span style="text-align: center; color: black; margin-left: 10%;" ><strong>Property #</strong> 90017694<%= foundProperty.id %></span>
+                        <br>
+                        <a href="#" style="color: #245abc; margin-left: 10%;"><strong>Report this property</strong></a>
+                        <br>
+                        <hr>
+                        <img src= <%= foundProperty.hosimage.split("public").pop() %> class="rounded float-left" style="height:30px;width: 30px;" alt="...">
+                        &nbsp;
+                        &nbsp;
+                        <span style="font-size: 14px">Contact Host at <%= foundProperty.hostemail %></span> 
+                        <br>
+                        <br>
+                    <!-- <div class="position-relative overflow-hidden mb-3" style="height: 80px;">
+                        <img class="img-fluid w-100 h-100" src="img/cat-500x80-2.jpg" style="object-fit: cover;">
+                        <a href="" class="overlay align-items-center justify-content-center h4 m-0 text-white text-decoration-none">
+                            Technology
+                        </a>
+                    </div>
+                    <div class="position-relative overflow-hidden mb-3" style="height: 80px;">
+                        <img class="img-fluid w-100 h-100" src="img/cat-500x80-3.jpg" style="object-fit: cover;">
+                        <a href="" class="overlay align-items-center justify-content-center h4 m-0 text-white text-decoration-none">
+                            Entertainment
+                        </a>
+                    </div>
+                    <div class="position-relative overflow-hidden" style="height: 80px;">
+                        <img class="img-fluid w-100 h-100" src="img/cat-500x80-4.jpg" style="object-fit: cover;">
+                        <a href="" class="overlay align-items-center justify-content-center h4 m-0 text-white text-decoration-none">
+                            Sports
+                        </a>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main News Slider End -->
+
+    <div class="container-fluid py-3">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
+                <h3 class="m-0">About this rental</h3>
+                <a class="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
+            </div>
+            <hr>
+            <div class="">
+                <div class="container">
+                    <nav class="breadcrumb bg-transparent m-0 p-0">
+                        <h5 class="breadcrumb-item">Apartment</h5>
+                        <h5 class="breadcrumb-item"><%= foundProperty.rooms %> Bedrooms </h5>
+                        <h5 class="breadcrumb-item"><%= foundProperty.squaremeters %> Square Meters</h5>
+
+                        <!-- <span class="breadcrumb-item active"></span> -->
+                    </nav>
+                </div>
+            </div>
+            <hr>
+            <br>
+            <p><%= foundProperty.description %></p>
+            <br>
+          <img src= <%= foundProperty.hosimage.split("public").pop() %> class="rounded float-left" style="height:30px;width: 30px;" alt="...">
+            &nbsp;
+            &nbsp;
+            <span style="font-size: 20px;">hosted by: <%= foundProperty.hostname %></span>
+        </div>
+    </div>
+    <br>
+    <!-- Amenities -->
+    <div class="container-fluid py-3">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
+                <h3 class="m-0">Amenities</h3>
+                <a class="text-secondary font-weight-medium text-decoration-none" href="#" data-toggle="modal" data-target="#exampleModalCenter">View All</a>
+            </div>
+            <div class="">
+                <div class="container">
+                    <a href="#" style="color: #2474de;" data-toggle="modal" data-target="#exampleModalCenter"><strong>View all 32 Amenities</strong></a>
+                </div>
+            </div>
+            <hr>
+            <br>            
+        </div>
+    </div>
+    <!-- /Amenities -->
+    <!-- Policy -->
+        <div class="container-fluid py-3">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
+                <h3 class="m-0">Policies</h3>
+                <!-- <br> -->
+                <!-- <h6>Cancellation policy</h6> -->
+                <a class="text-secondary font-weight-medium text-decoration-none" href="#">View All</a>
+            </div>
+            <div class="">
+            <div class="container">
+                <h5 class="m-0">Cancellation policy</h5>
+                <hr>
+                <br>
+            <!-- <div class="container"> -->
+              <div class="row">
+                <div class="col-sm">
+                <ul>
+                    
+                <li style="color:black;"><strong>100% refund of amount paid </strong>if you cancel at least 30 days before check-in.</li><br>
+                <li style="color:black;"><strong>50% refund of amount paid </strong>(minus the service fee) if you cancel at least 14 days before check-in.</li><br>
+                <li style="color:black;"><strong>No refund </strong>if you cancel less than 14 days before check-in.</li> <br>
+                <li style="color:black;">Free cancellation deadlines are in the property's timezone. Learn more about cancellation policies.</li><br>
+                </ul>
+                </div>
+                <div class="col-sm">
+                    <ul>
+                  <li style = "color: black;"> 
+                    <svg data-id="SVG_SUITCASE__24" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" d="M2.75 6.438h17a1.5 1.5 0 011.5 1.5v11.498h-17a1.5 1.5 0 01-1.5-1.5V9.999M6.75 19.436V6.438M17.75 19.436V6.438M7.75 6.2l1.881-2.762h4.404L15.916 6.2"></path></svg>
+                    <i> If you have upcoming trips, you can manage or cancel your booking in your traveler account. </i></li> <br>
+                </ul>
+                </div>
+              </div>
+            <!-- </div> -->
+<!--                 <p style="color:black;"><strong>100% refund of amount paid </strong>if you cancel by Jan 10, 2023.</p>
+                <p style="color:black;"><strong>50% refund of amount paid </strong>(minus the service fee) if you cancel by Jan 17, 2023.</p>
+                <p style="color:black;"><strong>No refund </strong>if you cancel after Jan 17, 2023.</p>
+                <p style="color:black;">Free cancellation deadlines are in the property's timezone. Learn more about cancellation policies.</p> -->
+            </div>
+            <br>
+            <div class="container">
+                <h5 class="m-0">Cleaning practices</h5>
+                <hr>
+                <!-- <br> -->
+                <!-- <ul> -->
+                    <li style="color:black;">Cleaned with disinfectant</li>
+                    <li style="color:black;">Check in and check out with no person-to-person contact</li>
+                    <li style="color:black;">All towels and bedding washed in hot water that’s at least 60ºC/140ºF</li>
+                    <li style="color:black;">High-touch surfaces cleaned with disinfectant (like countertops, light switches, handles, and faucets)</li>
+                <!-- </ul> -->
+
+            </div>
+            <br>
+            <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
+                <h3 class="m-0">Reviews</h3>
+                <!-- <br> -->
+                <!-- <h6>Cancellation policy</h6> -->
+                <!-- <a class="text-secondary font-weight-medium text-decoration-none" href="#">View All</a> -->
+            </div>
+            <br>
+            <div class="container">
+                <h6 class="m-0" style=""><strong>Great Appartment</strong></h6>
+                <p style="font-size: 13px;">5/5 
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <br>
+                    <br>
+                    Jeff S.                    
+                </p>
+                <p>Very tidy and lovely Vrbo apartment equipped with everything you need. A good bed and nice bathroom. <%= foundProperty.hostname %> is a great host and there when you need him, Very nice and wants to share all hé know about the area. We had a great stay!</p>
+                <hr>
+            </div>
+            <div class="container">
+                <h6 class="m-0" style=""><strong>It was very relaxing</strong></h6>
+                <p style="font-size: 13px;">5/5 
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <br>
+                    <br>
+                    Marcelo M.                    
+                </p>
+                <p>Great room! Great view! Very cute place. Has everything you need. Would love to stay here again.</p>
+                <hr>
+            </div>
+            <div class="container">
+                <h6 class="m-0" style=""><strong>Staff at the location</strong></h6>
+                <p style="font-size: 13px;">5/5 
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <br>
+                    <br>
+                    James T.                    
+                </p>
+                <p>The staff member that checked me in here, Francesca, was wonderful. Went out of her way to assist me. <%= foundProperty.hostname %> was also very helpful. The apartment itself was great.</p>
+                <hr>
+            </div>
+            <div class="container">
+                <h6 class="m-0" style=""><strong>Best View in a Wonderful Location</strong></h6>
+                <p style="font-size: 13px;">5/5 
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <br>
+                    <br>
+                    Elya J.
+                </p>
+                <p>This was the perfect little place , very well kept and clean . Loved the view and it was just a walk away to the supermarket . It was stocked with tons kitchen stuff . It was pretty spacious for <%= foundProperty.rooms %> rooms . Totally would stay again . Also the surrounding area had tons to offer . 
+                <br>
+                PS: <%= foundProperty.hostname %> is a Wonderful person, really easy to deal with. 
+
+                </p>
+                <hr>
+            </div>
+
+            </div>
+            <br>            
+        </div>
+    </div>
+    <!-- /Policy -->
+
+    <!-- Featured News Slider Start -->
+   <!--  <div class="container-fluid py-3">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
+                <h3 class="m-0">Featured</h3>
+                <a class="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
+            </div>
+            <div class="owl-carousel owl-carousel-2 carousel-item-4 position-relative">
+                <div class="position-relative overflow-hidden" style="height: 300px;">
+                    <img class="img-fluid w-100 h-100" src="img/news-300x300-1.jpg" style="object-fit: cover;">
+                    <div class="overlay">
+                        <div class="mb-1" style="font-size: 13px;">
+                            <a class="text-white" href="">Technology</a>
+                            <span class="px-1 text-white">/</span>
+                            <a class="text-white" href="">January 01, 2045</a>
+                        </div>
+                        <a class="h4 m-0 text-white" href="">Sanctus amet sed ipsum lorem</a>
+                    </div>
+                </div>
+                <div class="position-relative overflow-hidden" style="height: 300px;">
+                    <img class="img-fluid w-100 h-100" src="img/news-300x300-2.jpg" style="object-fit: cover;">
+                    <div class="overlay">
+                        <div class="mb-1" style="font-size: 13px;">
+                            <a class="text-white" href="">Technology</a>
+                            <span class="px-1 text-white">/</span>
+                            <a class="text-white" href="">January 01, 2045</a>
+                        </div>
+                        <a class="h4 m-0 text-white" href="">Sanctus amet sed ipsum lorem</a>
+                    </div>
+                </div>
+                <div class="position-relative overflow-hidden" style="height: 300px;">
+                    <img class="img-fluid w-100 h-100" src="img/news-300x300-3.jpg" style="object-fit: cover;">
+                    <div class="overlay">
+                        <div class="mb-1" style="font-size: 13px;">
+                            <a class="text-white" href="">Technology</a>
+                            <span class="px-1 text-white">/</span>
+                            <a class="text-white" href="">January 01, 2045</a>
+                        </div>
+                        <a class="h4 m-0 text-white" href="">Sanctus amet sed ipsum lorem</a>
+                    </div>
+                </div>
+                <div class="position-relative overflow-hidden" style="height: 300px;">
+                    <img class="img-fluid w-100 h-100" src="img/news-300x300-4.jpg" style="object-fit: cover;">
+                    <div class="overlay">
+                        <div class="mb-1" style="font-size: 13px;">
+                            <a class="text-white" href="">Technology</a>
+                            <span class="px-1 text-white">/</span>
+                            <a class="text-white" href="">January 01, 2045</a>
+                        </div>
+                        <a class="h4 m-0 text-white" href="">Sanctus amet sed ipsum lorem</a>
+                    </div>
+                </div>
+                <div class="position-relative overflow-hidden" style="height: 300px;">
+                    <img class="img-fluid w-100 h-100" src="img/news-300x300-5.jpg" style="object-fit: cover;">
+                    <div class="overlay">
+                        <div class="mb-1" style="font-size: 13px;">
+                            <a class="text-white" href="">Technology</a>
+                            <span class="px-1 text-white">/</span>
+                            <a class="text-white" href="">January 01, 2045</a>
+                        </div>
+                        <a class="h4 m-0 text-white" href="">Sanctus amet sed ipsum lorem</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div> -->
+    <!-- Featured News Slider End -->
+
+
+    <!-- Category News Slider Start -->
+<!--     <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 py-3">
+                    <div class="bg-light py-2 px-4 mb-3">
+                        <h3 class="m-0">Business</h3>
+                    </div>
+                    <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
+                        <div class="position-relative">
+                            <img class="img-fluid w-100" src="img/news-500x280-1.jpg" style="object-fit: cover;">
+                            <div class="overlay position-relative bg-light">
+                                <div class="mb-2" style="font-size: 13px;">
+                                    <a href="">Technology</a>
+                                    <span class="px-1">/</span>
+                                    <span>January 01, 2045</span>
+                                </div>
+                                <a class="h4 m-0" href="">Sanctus amet sed ipsum lorem</a>
+                            </div>
+                        </div>
+                        <div class="position-relative">
+                            <img class="img-fluid w-100" src="img/news-500x280-2.jpg" style="object-fit: cover;">
+                            <div class="overlay position-relative bg-light">
+                                <div class="mb-2" style="font-size: 13px;">
+                                    <a href="">Technology</a>
+                                    <span class="px-1">/</span>
+                                    <span>January 01, 2045</span>
+                                </div>
+                                <a class="h4 m-0" href="">Sanctus amet sed ipsum lorem</a>
+                            </div>
+                        </div>
+                        <div class="position-relative">
+                            <img class="img-fluid w-100" src="img/news-500x280-3.jpg" style="object-fit: cover;">
+                            <div class="overlay position-relative bg-light">
+                                <div class="mb-2" style="font-size: 13px;">
+                                    <a href="">Technology</a>
+                                    <span class="px-1">/</span>
+                                    <span>January 01, 2045</span>
+                                </div>
+                                <a class="h4 m-0" href="">Sanctus amet sed ipsum lorem</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 py-3">
+                    <div class="bg-light py-2 px-4 mb-3">
+                        <h3 class="m-0">Technology</h3>
+                    </div>
+                    <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
+                        <div class="position-relative">
+                            <img class="img-fluid w-100" src="img/news-500x280-4.jpg" style="object-fit: cover;">
+                            <div class="overlay position-relative bg-light">
+                                <div class="mb-2" style="font-size: 13px;">
+                                    <a href="">Technology</a>
+                                    <span class="px-1">/</span>
+                                    <span>January 01, 2045</span>
+                                </div>
+                                <a class="h4 m-0" href="">Sanctus amet sed ipsum lorem</a>
+                            </div>
+                        </div>
+                        <div class="position-relative">
+                            <img class="img-fluid w-100" src="img/news-500x280-5.jpg" style="object-fit: cover;">
+                            <div class="overlay position-relative bg-light">
+                                <div class="mb-2" style="font-size: 13px;">
+                                    <a href="">Technology</a>
+                                    <span class="px-1">/</span>
+                                    <span>January 01, 2045</span>
+                                </div>
+                                <a class="h4 m-0" href="">Sanctus amet sed ipsum lorem</a>
+                            </div>
+                        </div>
+                        <div class="position-relative">
+                            <img class="img-fluid w-100" src="img/news-500x280-6.jpg" style="object-fit: cover;">
+                            <div class="overlay position-relative bg-light">
+                                <div class="mb-2" style="font-size: 13px;">
+                                    <a href="">Technology</a>
+                                    <span class="px-1">/</span>
+                                    <span>January 01, 2045</span>
+                                </div>
+                                <a class="h4 m-0" href="">Sanctus amet sed ipsum lorem</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- </div> -->
+    <!-- Category News Slider End -->
+
+
+    <!-- Category News Slider Start -->
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 py-3">
+                    <div class="bg-light py-2 px-4 mb-3">
+                        <!-- <h3 class="m-0">Entertainment</h3> -->
+                    </div>
+                    <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
+                        <div class="position-relative">
+                            <img class="img-fluid w-100" src="/img/r1.jpg" style="object-fit: cover; max-height: 300px;">
+                            <div class="overlay position-relative bg-light">
+                                <div class="mb-2" style="font-size: 13px;">
+                                    <a href="#" style="color: #15326f;">Cleaveland</a>
+                                    <span class="px-1">/</span>
+                                    <span>September 01, 2022</span>
+                                </div>
+                                <!-- <a class="h4 m-0" href="">Sanctus amet sed ipsum lorem</a> -->
+                            </div>
+                        </div>
+                        <div class="position-relative">
+                            <img class="img-fluid w-100" src="/img/r2.jpg" style="object-fit: cover; max-height: 300px;">
+                            <div class="overlay position-relative bg-light">
+                                <div class="mb-2" style="font-size: 13px;">
+                                    <a href="#" style="color: #15326f;">Navada</a>
+                                    <span class="px-1">/</span>
+                                    <span>September 01, 2022</span>
+                                </div>
+                                <!-- <a class="h4 m-0" href="">Sanctus amet sed ipsum lorem</a> -->
+                            </div>
+                        </div>
+                        <div class="position-relative">
+                            <img class="img-fluid w-100" src="/img/r3.jpg" style="object-fit: cover; max-height: 300px;">
+                            <div class="overlay position-relative bg-light">
+                                <div class="mb-2" style="font-size: 13px;">
+                                    <a href="#" style="color: #15326f;">Kentucky</a>
+                                    <span class="px-1">/</span>
+                                    <span>September 01, 2022</span>
+                                </div>
+                                <!-- <a class="h4 m-0" href="">Sanctus amet sed ipsum lorem</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+     <!--            <div class="col-lg-6 py-3">
+                    <div class="bg-light py-2 px-4 mb-3">
+                        <h3 class="m-0">Sports</h3>
+                    </div>
+                    <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
+                        <div class="position-relative">
+                            <img class="img-fluid w-100" src="img/news-500x280-3.jpg" style="object-fit: cover;">
+                            <div class="overlay position-relative bg-light">
+                                <div class="mb-2" style="font-size: 13px;">
+                                    <a href="">Technology</a>
+                                    <span class="px-1">/</span>
+                                    <span>January 01, 2045</span>
+                                </div>
+                                <a class="h4 m-0" href="">Sanctus amet sed ipsum lorem</a>
+                            </div>
+                        </div>
+                        <div class="position-relative">
+                            <img class="img-fluid w-100" src="img/news-500x280-2.jpg" style="object-fit: cover;">
+                            <div class="overlay position-relative bg-light">
+                                <div class="mb-2" style="font-size: 13px;">
+                                    <a href="">Technology</a>
+                                    <span class="px-1">/</span>
+                                    <span>January 01, 2045</span>
+                                </div>
+                                <a class="h4 m-0" href="">Sanctus amet sed ipsum lorem</a>
+                            </div>
+                        </div>
+                        <div class="position-relative">
+                            <img class="img-fluid w-100" src="img/news-500x280-1.jpg" style="object-fit: cover;">
+                            <div class="overlay position-relative bg-light">
+                                <div class="mb-2" style="font-size: 13px;">
+                                    <a href="">Technology</a>
+                                    <span class="px-1">/</span>
+                                    <span>January 01, 2045</span>
+                                </div>
+                                <a class="h4 m-0" href="">Sanctus amet sed ipsum lorem</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Category News Slider End -->
+
+
+    <!-- News With Sidebar Start -->
+<!--     <div class="container-fluid py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
+                                <h3 class="m-0">Popular</h3>
+                                <a class="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="position-relative mb-3">
+                                <img class="img-fluid w-100" src="img/news-500x280-2.jpg" style="object-fit: cover;">
+                                <div class="overlay position-relative bg-light">
+                                    <div class="mb-2" style="font-size: 14px;">
+                                        <a href="">Technology</a>
+                                        <span class="px-1">/</span>
+                                        <span>January 01, 2045</span>
+                                    </div>
+                                    <a class="h4" href="">Est stet amet ipsum stet clita rebum duo</a>
+                                    <p class="m-0">Rebum dolore duo et vero ipsum clita, est ea sed duo diam ipsum, clita at justo, lorem amet vero eos sed sit...</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <img src="img/news-100x100-1.jpg" style="width: 100px; height: 100px; object-fit: cover;">
+                                <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
+                                    <div class="mb-1" style="font-size: 13px;">
+                                        <a href="">Technology</a>
+                                        <span class="px-1">/</span>
+                                        <span>January 01, 2045</span>
+                                    </div>
+                                    <a class="h6 m-0" href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <img src="img/news-100x100-2.jpg" style="width: 100px; height: 100px; object-fit: cover;">
+                                <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
+                                    <div class="mb-1" style="font-size: 13px;">
+                                        <a href="">Technology</a>
+                                        <span class="px-1">/</span>
+                                        <span>January 01, 2045</span>
+                                    </div>
+                                    <a class="h6 m-0" href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="position-relative mb-3">
+                                <img class="img-fluid w-100" src="img/news-500x280-3.jpg" style="object-fit: cover;">
+                                <div class="overlay position-relative bg-light">
+                                    <div class="mb-2" style="font-size: 14px;">
+                                        <a href="">Technology</a>
+                                        <span class="px-1">/</span>
+                                        <span>January 01, 2045</span>
+                                    </div>
+                                    <a class="h4" href="">Est stet amet ipsum stet clita rebum duo</a>
+                                    <p class="m-0">Rebum dolore duo et vero ipsum clita, est ea sed duo diam ipsum, clita at justo, lorem amet vero eos sed sit...</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <img src="img/news-100x100-3.jpg" style="width: 100px; height: 100px; object-fit: cover;">
+                                <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
+                                    <div class="mb-1" style="font-size: 13px;">
+                                        <a href="">Technology</a>
+                                        <span class="px-1">/</span>
+                                        <span>January 01, 2045</span>
+                                    </div>
+                                    <a class="h6 m-0" href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <img src="img/news-100x100-4.jpg" style="width: 100px; height: 100px; object-fit: cover;">
+                                <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
+                                    <div class="mb-1" style="font-size: 13px;">
+                                        <a href="">Technology</a>
+                                        <span class="px-1">/</span>
+                                        <span>January 01, 2045</span>
+                                    </div>
+                                    <a class="h6 m-0" href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 pb-3">
+                        <a href=""><img class="img-fluid w-100" src="img/ads-700x70.jpg" alt=""></a>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
+                                <h3 class="m-0">Latest</h3>
+                                <a class="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="position-relative mb-3">
+                                <img class="img-fluid w-100" src="img/news-500x280-5.jpg" style="object-fit: cover;">
+                                <div class="overlay position-relative bg-light">
+                                    <div class="mb-2" style="font-size: 14px;">
+                                        <a href="">Technology</a>
+                                        <span class="px-1">/</span>
+                                        <span>January 01, 2045</span>
+                                    </div>
+                                    <a class="h4" href="">Est stet amet ipsum stet clita rebum duo</a>
+                                    <p class="m-0">Rebum dolore duo et vero ipsum clita, est ea sed duo diam ipsum, clita at justo, lorem amet vero eos sed sit...</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <img src="img/news-100x100-5.jpg" style="width: 100px; height: 100px; object-fit: cover;">
+                                <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
+                                    <div class="mb-1" style="font-size: 13px;">
+                                        <a href="">Technology</a>
+                                        <span class="px-1">/</span>
+                                        <span>January 01, 2045</span>
+                                    </div>
+                                    <a class="h6 m-0" href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <img src="img/news-100x100-1.jpg" style="width: 100px; height: 100px; object-fit: cover;">
+                                <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
+                                    <div class="mb-1" style="font-size: 13px;">
+                                        <a href="">Technology</a>
+                                        <span class="px-1">/</span>
+                                        <span>January 01, 2045</span>
+                                    </div>
+                                    <a class="h6 m-0" href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="position-relative mb-3">
+                                <img class="img-fluid w-100" src="img/news-500x280-6.jpg" style="object-fit: cover;">
+                                <div class="overlay position-relative bg-light">
+                                    <div class="mb-2" style="font-size: 14px;">
+                                        <a href="">Technology</a>
+                                        <span class="px-1">/</span>
+                                        <span>January 01, 2045</span>
+                                    </div>
+                                    <a class="h4" href="">Est stet amet ipsum stet clita rebum duo</a>
+                                    <p class="m-0">Rebum dolore duo et vero ipsum clita, est ea sed duo diam ipsum, clita at justo, lorem amet vero eos sed sit...</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <img src="img/news-100x100-2.jpg" style="width: 100px; height: 100px; object-fit: cover;">
+                                <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
+                                    <div class="mb-1" style="font-size: 13px;">
+                                        <a href="">Technology</a>
+                                        <span class="px-1">/</span>
+                                        <span>January 01, 2045</span>
+                                    </div>
+                                    <a class="h6 m-0" href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <img src="img/news-100x100-3.jpg" style="width: 100px; height: 100px; object-fit: cover;">
+                                <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
+                                    <div class="mb-1" style="font-size: 13px;">
+                                        <a href="">Technology</a>
+                                        <span class="px-1">/</span>
+                                        <span>January 01, 2045</span>
+                                    </div>
+                                    <a class="h6 m-0" href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 pt-3 pt-lg-0">
+
+                    <div class="pb-3">
+                        <div class="bg-light py-2 px-4 mb-3">
+                            <h3 class="m-0">Follow Us</h3>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <a href="" class="d-block w-50 py-2 px-3 text-white text-decoration-none mr-2" style="background: #39569E;">
+                                <small class="fab fa-facebook-f mr-2"></small><small>12,345 Fans</small>
+                            </a>
+                            <a href="" class="d-block w-50 py-2 px-3 text-white text-decoration-none ml-2" style="background: #52AAF4;">
+                                <small class="fab fa-twitter mr-2"></small><small>12,345 Followers</small>
+                            </a>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <a href="" class="d-block w-50 py-2 px-3 text-white text-decoration-none mr-2" style="background: #0185AE;">
+                                <small class="fab fa-linkedin-in mr-2"></small><small>12,345 Connects</small>
+                            </a>
+                            <a href="" class="d-block w-50 py-2 px-3 text-white text-decoration-none ml-2" style="background: #C8359D;">
+                                <small class="fab fa-instagram mr-2"></small><small>12,345 Followers</small>
+                            </a>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <a href="" class="d-block w-50 py-2 px-3 text-white text-decoration-none mr-2" style="background: #DC472E;">
+                                <small class="fab fa-youtube mr-2"></small><small>12,345 Subscribers</small>
+                            </a>
+                            <a href="" class="d-block w-50 py-2 px-3 text-white text-decoration-none ml-2" style="background: #1AB7EA;">
+                                <small class="fab fa-vimeo-v mr-2"></small><small>12,345 Followers</small>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="pb-3">
+                        <div class="bg-light py-2 px-4 mb-3">
+                            <h3 class="m-0">Newsletter</h3>
+                        </div>
+                        <div class="bg-light text-center p-4 mb-3">
+                            <p>Aliqu justo et labore at eirmod justo sea erat diam dolor diam vero kasd</p>
+                            <div class="input-group" style="width: 100%;">
+                                <input type="text" class="form-control form-control-lg" placeholder="Your Email">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary">Sign Up</button>
+                                </div>
+                            </div>
+                            <small>Sit eirmod nonumy kasd eirmod</small>
+                        </div>
+                    </div>
+                    <div class="mb-3 pb-3">
+                        <a href=""><img class="img-fluid" src="img/news-500x280-4.jpg" alt=""></a>
+                    </div>
+                    <div class="pb-3">
+                        <div class="bg-light py-2 px-4 mb-3">
+                            <h3 class="m-0">Tranding</h3>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <img src="img/news-100x100-1.jpg" style="width: 100px; height: 100px; object-fit: cover;">
+                            <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
+                                <div class="mb-1" style="font-size: 13px;">
+                                    <a href="">Technology</a>
+                                    <span class="px-1">/</span>
+                                    <span>January 01, 2045</span>
+                                </div>
+                                <a class="h6 m-0" href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <img src="img/news-100x100-2.jpg" style="width: 100px; height: 100px; object-fit: cover;">
+                            <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
+                                <div class="mb-1" style="font-size: 13px;">
+                                    <a href="">Technology</a>
+                                    <span class="px-1">/</span>
+                                    <span>January 01, 2045</span>
+                                </div>
+                                <a class="h6 m-0" href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <img src="img/news-100x100-3.jpg" style="width: 100px; height: 100px; object-fit: cover;">
+                            <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
+                                <div class="mb-1" style="font-size: 13px;">
+                                    <a href="">Technology</a>
+                                    <span class="px-1">/</span>
+                                    <span>January 01, 2045</span>
+                                </div>
+                                <a class="h6 m-0" href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <img src="img/news-100x100-4.jpg" style="width: 100px; height: 100px; object-fit: cover;">
+                            <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
+                                <div class="mb-1" style="font-size: 13px;">
+                                    <a href="">Technology</a>
+                                    <span class="px-1">/</span>
+                                    <span>January 01, 2045</span>
+                                </div>
+                                <a class="h6 m-0" href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <img src="img/news-100x100-5.jpg" style="width: 100px; height: 100px; object-fit: cover;">
+                            <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
+                                <div class="mb-1" style="font-size: 13px;">
+                                    <a href="">Technology</a>
+                                    <span class="px-1">/</span>
+                                    <span>January 01, 2045</span>
+                                </div>
+                                <a class="h6 m-0" href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pb-3">
+                        <div class="bg-light py-2 px-4 mb-3">
+                            <h3 class="m-0">Tags</h3>
+                        </div>
+                        <div class="d-flex flex-wrap m-n1">
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Politics</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Corporate</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Sports</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Health</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Education</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Science</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Technology</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Foods</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Entertainment</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Travel</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Lifestyle</a>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+    </div> -->
+    <!-- News With Sidebar End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-light pt-5 px-sm-3 px-md-5">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <a href="#" class="navbar-brand">
+                    <h1 class="mb-2 mt-n2 display-5 text-uppercase" style="color: #15326f;"><span class="" style="color: #15326f;">VRBO</span>
+                    </h1>
+                </a>
+                <p>© 2022 Vrbo, an Expedia Group company. All rights reserved.
+Terms and Conditions · Privacy Policy · Do Not Sell My Personal Information</p>
+                <div class="d-flex justify-content-start mt-4">
+                    <a class="btn btn-outline-secondary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-secondary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-secondary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-secondary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-secondary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="font-weight-bold mb-4">Categories</h4>
+                <div class="d-flex flex-wrap m-n1">
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Politics</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Business</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Corporate</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Sports</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Health</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Education</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Science</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Technology</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Foods</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Entertainment</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Travel</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Lifestyle</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="font-weight-bold mb-4">Tags</h4>
+                <div class="d-flex flex-wrap m-n1">
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Politics</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Business</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Corporate</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Sports</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Health</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Education</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Science</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Technology</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Foods</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Entertainment</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Travel</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary m-1">Lifestyle</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="font-weight-bold mb-4">Quick Links</h4>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right text-dark mr-2"></i>About</a>
+                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right text-dark mr-2"></i>Advertise</a>
+                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right text-dark mr-2"></i>Privacy & policy</a>
+                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right text-dark mr-2"></i>Terms & conditions</a>
+                    <a class="text-secondary" href="#"><i class="fa fa-angle-right text-dark mr-2"></i>Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid py-4 px-sm-3 px-md-5">
+        <p class="m-0 text-center">
+            &copy; <a class="font-weight-bold" style="color: #15326f;" href="#">VRBO</a>. All Rights Reserved. 
+			
+			<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+			Designed by <a class="font-weight-bold" style="color: #15326f;" href="#">VRBO Dev</a>
+        </p>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-dark back-to-top"><i class="fa fa-angle-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/easing/easing.min.js"></script>
+    <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="/mail/jqBootstrapValidation.min.js"></script>
+    <script src="/mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="/js/main.js"></script>
+<script type="text/javascript">
+    $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+</script>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered  modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Amenities</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <!-- <hr> -->
+      </div>
+      <div class="modal-body">
+            <div class="container">
+               <h5>Essentials</h5>                
+              <div class="row">
+                <div class="col-sm">
+                  <li style = "color: black;">Internet</li>
+                  <li style = "color: black;">Linens provided</li>
+                  <!-- <li style = "color: black;">Towels provided</li> -->
+                </div>
+                <div class="col-sm">
+                  <li style = "color: black;">Heating</li>
+                  <li style = "color: black;">Air Conditioning</li>
+                  <!-- <li style = "color: black;">Wireless Internet</li> -->
+                </div>
+                <div class="col-sm">
+                  <li style = "color: black;">Toilet Paper</li>
+                  <li style = "color: black;">Wifi speed 100+ Mbps</li>
+                  <!-- <li style = "color: black;">Free Wifi</li> -->
+                </div>
+              </div>
+            </div>
+            <hr>
+            <!-- <br> -->
+            <!-- 2 -->
+            <div class="container">
+               <h5>Kitchen</h5>                
+              <div class="row">
+                <div class="col-sm">
+                  <li style = "color: black;">Microwave</li>
+                  <!-- <li style = "color: black;">Refrigerator</li> -->
+                  <li style = "color: black;">Dishes & Utensils</li>
+                  <!-- <li style = "color: black;">Coffee Maker</li> -->
+                </div>
+
+                <div class="col-sm">
+                  <li style = "color: black;">Kitchen</li>
+                  <!-- <li style = "color: black;">Dishwasher</li> -->
+                  <li style = "color: black;">Oven</li>
+                  <!-- <li style = "color: black;">Blender</li> -->
+                </div>
+                <div class="col-sm">
+                  <li style = "color: black;">Dishes & utensils for kids</li>
+                  <!-- <li style = "color: black;">Dining table</li> -->
+                  <li style = "color: black;">Kitchen island</li>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <!-- <br> -->
+            <!-- 3 -->
+            <div class="container">
+               <h5>Laundry</h5>                
+              <div class="row">
+                <div class="col-sm">
+                  <li style = "color: black;">Washing Machine</li>
+<!--                   <li style = "color: black;">Linens provided</li>
+                  <li style = "color: black;">Towels provided</li> -->
+                </div>
+                <div class="col-sm">
+                  <li style = "color: black;">Clothes Dryer</li>
+<!--                   <li style = "color: black;">Air Conditioning</li>
+                  <li style = "color: black;">Wireless Internet</li> -->
+                </div>
+                <div class="col-sm">
+                  <li style = "color: black;">Iron & Board</li>
+<!--                   <li style = "color: black;">Wifi speed 100+ Mbps</li>
+                  <li style = "color: black;">Free Wifi</li> -->
+                </div>
+              </div>
+            </div>
+            <hr>
+           
+            <!-- 3 -->
+            <div class="container">
+               <h5>Entertainment</h5>                
+              <div class="row">
+                <div class="col-sm">
+                  <li style = "color: black;">Television</li>
+<!--                   <li style = "color: black;">Linens provided</li>
+                  <li style = "color: black;">Towels provided</li> -->
+                </div>
+                <div class="col-sm">
+                  <li style = "color: black;">Smart TV</li>
+<!--                   <li style = "color: black;">Air Conditioning</li>
+                  <li style = "color: black;">Wireless Internet</li> -->
+                </div>
+                <div class="col-sm">
+<!--                   <li style = "color: black;">Toilet Paper</li>
+                  <li style = "color: black;">Wifi speed 100+ Mbps</li>
+                  <li style = "color: black;">Free Wifi</li> -->
+                </div>
+              </div>
+            </div>
+      <!--       <hr>
+            <br> -->
+
+      </div>
+<!--       <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+<% } else { %>
+    
+    <main>
+        <div id="error_page">
+            <div class="wrapper">
+                <div class="container">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-xl-7 col-lg-9">
+                            <h2>404 <i class="icon_error-triangle_alt"></i></h2>
+                            <p>We're sorry, but the page you were looking for doesn't exist.</p>
+                            <form>
+                                <div class="search_bar_error">
+                                    <input type="text" class="form-control" placeholder="What are you looking for?">
+                                    <input type="submit" value="Search">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<% } %>
+</body>
+
+</html>
